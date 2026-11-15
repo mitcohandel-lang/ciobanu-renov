@@ -1,0 +1,13 @@
+{
+  "name": "Ciobanu Rénov",
+  "short_name": "Ciobanu Rénov",
+  "lang": "fr",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#14171c",
+  "theme_color": "#14171c",
+  "icons": [
+    {"src": "images/seo/icon-192.png", "sizes": "192x192", "type": "image/png"},
+    {"src": "images/seo/icon-512.png", "sizes": "512x512", "type": "image/png"}
+  ]
+}
