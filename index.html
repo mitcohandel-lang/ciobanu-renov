@@ -1,0 +1,336 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ciobanu Rénov – Toiture, charpente, isolation | Mézières-sur-Seine (78)</title>
+<meta name="description" content="Ciobanu Rénov, artisan du bâtiment à Mézières-sur-Seine (Yvelines) : toiture, charpente, isolation, maçonnerie et rénovation. Devis gratuit au 06 47 99 17 77.">
+<link rel="icon" href="logo.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root{
+  --yellow:#F5B301; --yellow-dark:#D99A00; --black:#151515; --ink:#2a2a2a;
+  --muted:#666; --bg:#ffffff; --soft:#f6f4ee; --line:#e6e2d6; --radius:14px;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px}
+h1,h2,h3{font-family:Montserrat,sans-serif;color:var(--black);line-height:1.2}
+a{color:inherit}
+img{max-width:100%;display:block}
+.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid transparent;transition:.2s;cursor:pointer;font-size:16px}
+.btn-y{background:var(--yellow);color:var(--black)}
+.btn-y:hover{background:var(--yellow-dark)}
+.btn-o{border-color:#fff;color:#fff}
+.btn-o:hover{background:#fff;color:var(--black)}
+.tag{display:inline-block;font-family:Montserrat;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow-dark);margin-bottom:12px}
+section{padding:90px 0}
+.title{font-size:clamp(28px,4vw,40px);margin-bottom:16px}
+.lead{color:var(--muted);max-width:640px;font-size:17px}
+
+/* header */
+header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
+.brand img{height:58px;width:auto}
+.menu{display:flex;gap:28px;align-items:center;list-style:none}
+.menu a{text-decoration:none;font-weight:500}
+.menu a:hover{color:var(--yellow-dark)}
+.menu .btn{padding:10px 20px;color:var(--black)}
+.burger{display:none;background:none;border:0;font-size:28px;cursor:pointer}
+
+/* hero */
+.hero{background:var(--black);color:#fff;position:relative;overflow:hidden;padding:110px 0 120px}
+.hero::before{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(135deg,rgba(245,179,1,.06) 0 2px,transparent 2px 22px)}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.2fr .8fr;gap:50px;align-items:center}
+.hero h1{color:#fff;font-size:clamp(34px,5.4vw,58px);font-weight:800}
+.hero h1 span{color:var(--yellow)}
+.hero p{color:#cfcfcf;font-size:18px;margin:22px 0 34px;max-width:560px}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero-card{background:#fff;border-radius:20px;padding:26px;box-shadow:0 20px 60px rgba(0,0,0,.4)}
+.hero-card img{border-radius:10px}
+.badges{display:flex;gap:26px;flex-wrap:wrap;margin-top:40px}
+.badges div{font-size:14px;color:#bbb}
+.badges b{display:block;font-family:Montserrat;font-size:22px;color:var(--yellow)}
+
+/* services */
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
+.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;transition:.25s}
+.card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.08);border-color:var(--yellow)}
+.ico{width:56px;height:56px;border-radius:12px;background:var(--yellow);display:grid;place-items:center;margin-bottom:18px}
+.ico svg{width:30px;height:30px;stroke:var(--black);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.card h3{font-size:20px;margin-bottom:10px}
+.card p{color:var(--muted);font-size:15px}
+.card ul{margin-top:12px;padding-left:18px;color:var(--muted);font-size:14px}
+
+/* why */
+.why{background:var(--soft)}
+.why .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.checks{list-style:none;margin-top:28px;display:grid;gap:18px}
+.checks li{display:flex;gap:14px}
+.checks li::before{content:"✓";flex:none;width:30px;height:30px;border-radius:50%;background:var(--black);color:var(--yellow);display:grid;place-items:center;font-weight:700}
+.checks b{display:block;color:var(--black)}
+.stat-box{background:var(--black);color:#fff;border-radius:20px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
+.stat-box b{font-family:Montserrat;font-size:40px;color:var(--yellow);display:block}
+.stat-box span{color:#bbb;font-size:14px}
+
+/* steps */
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:46px;counter-reset:s}
+.step{padding:28px;border-radius:var(--radius);border:1px solid var(--line);position:relative}
+.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:Montserrat;font-weight:800;font-size:42px;color:var(--yellow);display:block;margin-bottom:8px}
+.step h3{font-size:18px;margin-bottom:8px}
+.step p{color:var(--muted);font-size:15px}
+
+/* zone */
+.zone{background:var(--black);color:#fff}
+.zone h2{color:#fff}
+.zone .lead{color:#bbb}
+.towns{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
+.towns span{border:1px solid #444;border-radius:999px;padding:8px 16px;font-size:14px;color:#ddd}
+
+/* contact */
+.contact .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px}
+.info{display:grid;gap:18px;margin-top:30px}
+.info a,.info div{display:flex;gap:14px;align-items:flex-start;text-decoration:none}
+.info .i{flex:none;width:46px;height:46px;border-radius:10px;background:var(--soft);display:grid;place-items:center}
+.info .i svg{width:22px;height:22px;stroke:var(--black);fill:none;stroke-width:2}
+.info small{display:block;color:var(--muted);font-size:13px}
+.info strong{font-size:17px;color:var(--black)}
+form{background:var(--soft);padding:34px;border-radius:20px;display:grid;gap:16px}
+.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
+label{font-size:14px;font-weight:600;display:grid;gap:6px}
+input,select,textarea{font:inherit;padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;width:100%}
+input:focus,select:focus,textarea:focus{outline:2px solid var(--yellow);border-color:var(--yellow)}
+textarea{min-height:130px;resize:vertical}
+form .btn{justify-content:center;border:0}
+.note{font-size:13px;color:var(--muted)}
+
+/* footer */
+footer{background:#0d0d0d;color:#aaa;padding:50px 0 30px;font-size:14px}
+.foot{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}
+footer h4{color:#fff;font-family:Montserrat;margin-bottom:14px}
+footer a{text-decoration:none}
+footer a:hover{color:var(--yellow)}
+.legal{border-top:1px solid #222;margin-top:40px;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
+.credit b{color:var(--yellow)}
+
+.call-fab{position:fixed;right:18px;bottom:18px;z-index:60;width:60px;height:60px;border-radius:50%;background:var(--yellow);display:none;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3)}
+.call-fab svg{width:28px;height:28px;stroke:var(--black);fill:none;stroke-width:2}
+
+@media (max-width:900px){
+  .hero .wrap,.why .wrap,.contact .wrap,.foot{grid-template-columns:1fr}
+  .hero-card{max-width:380px}
+  .grid{grid-template-columns:1fr 1fr}
+  .steps{grid-template-columns:1fr 1fr}
+  .menu{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;padding:20px;border-bottom:1px solid var(--line)}
+  .menu.open{display:flex}
+  .burger{display:block}
+  .call-fab{display:grid}
+}
+@media (max-width:600px){
+  section{padding:64px 0}
+  .wrap{padding:0 16px}
+  .grid,.steps,.row{grid-template-columns:1fr}
+  .stat-box{padding:28px}
+  form{padding:22px}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <nav class="wrap nav">
+    <a href="#" class="brand"><img src="logo.jpg" alt="Ciobanu Rénov"></a>
+    <button class="burger" aria-label="Menu" onclick="document.querySelector('.menu').classList.toggle('open')">☰</button>
+    <ul class="menu" onclick="this.classList.remove('open')">
+      <li><a href="#services">Services</a></li>
+      <li><a href="#pourquoi">Pourquoi nous</a></li>
+      <li><a href="#methode">Méthode</a></li>
+      <li><a href="#zone">Zone</a></li>
+      <li><a href="#contact" class="btn btn-y">Devis gratuit</a></li>
+    </ul>
+  </nav>
+</header>
+
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="tag">Artisan du bâtiment · Yvelines (78)</span>
+      <h1>Votre toit et votre maison <span>entre de bonnes mains</span></h1>
+      <p>Toiture, charpente, isolation et maçonnerie : Ciobanu Rénov réalise vos travaux de rénovation avec soin, dans les délais annoncés et au juste prix.</p>
+      <div class="cta">
+        <a href="#contact" class="btn btn-y">Demander un devis gratuit</a>
+        <a href="tel:+33647991777" class="btn btn-o">📞 06 47 99 17 77</a>
+      </div>
+      <div class="badges">
+        <div><b>Devis</b>gratuit &amp; détaillé</div>
+        <div><b>Délais</b>respectés</div>
+        <div><b>Chantier</b>propre à la fin</div>
+      </div>
+    </div>
+    <div class="hero-card"><img src="logo.jpg" alt="Logo Ciobanu Rénov"></div>
+  </div>
+</section>
+
+<section id="services">
+  <div class="wrap">
+    <span class="tag">Nos services</span>
+    <h2 class="title">Des travaux de A à Z</h2>
+    <p class="lead">Du montage de l’échafaudage au nettoyage de fin de chantier, nous prenons en charge l’ensemble de votre projet.</p>
+    <div class="grid">
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></div>
+        <h3>Couverture &amp; toiture</h3>
+        <p>Dépose et repose de tuiles, remplacement des tuiles cassées, réparation de fuites, faîtage.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M2 20L12 4l10 16"/><path d="M7 12h10M5 16h14"/></svg></div>
+        <h3>Charpente</h3>
+        <p>Remplacement des chevrons et liteaux endommagés, renforcement et traitement de charpente.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/><path d="M7 7v10M17 7v10"/></svg></div>
+        <h3>Isolation</h3>
+        <p>Isolation des combles, toiture et murs pour réduire vos factures d’énergie et gagner en confort.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16"/><path d="M3 9h18M3 14h18M9 4v5M15 9v5M9 14v6"/></svg></div>
+        <h3>Maçonnerie</h3>
+        <p>Reprise de maçonnerie, jonctions de toiture, rives, solins, petits ouvrages et réparations.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><path d="M14 4l6 6-9 9H5v-6z"/><path d="M12 6l6 6"/></svg></div>
+        <h3>Rénovation</h3>
+        <p>Rénovation intérieure et extérieure : remise en état, finitions, amélioration de votre habitat.</p>
+      </div>
+      <div class="card">
+        <div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="8" width="13" height="9"/><path d="M15 11h4l3 3v3h-7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div>
+        <h3>Échafaudage &amp; gravats</h3>
+        <p>Installation d’échafaudage, enlèvement des gravats et évacuation en déchetterie.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="why" id="pourquoi">
+  <div class="wrap">
+    <div>
+      <span class="tag">Pourquoi nous choisir</span>
+      <h2 class="title">Un artisan, un interlocuteur unique</h2>
+      <p class="lead">Vous traitez directement avec le professionnel qui réalise vos travaux. Pas d’intermédiaire, pas de surprise.</p>
+      <ul class="checks">
+        <li><div><b>Devis clair et détaillé</b>Chaque poste est chiffré : vous savez exactement ce que vous payez.</div></li>
+        <li><div><b>Planning annoncé</b>Date de début, durée estimée et date de fin indiquées dès le devis.</div></li>
+        <li><div><b>Matériaux de qualité</b>Fournitures adaptées à votre toiture et à votre budget.</div></li>
+        <li><div><b>Chantier propre</b>Nettoyage de fin de chantier et évacuation des déchets inclus.</div></li>
+      </ul>
+    </div>
+    <div class="stat-box">
+      <div><b>100%</b><span>des devis gratuits et sans engagement</span></div>
+      <div><b>78</b><span>intervention dans les Yvelines et alentours</span></div>
+      <div><b>1</b><span>seul interlocuteur du devis à la livraison</span></div>
+      <div><b>6</b><span>domaines d’intervention : toiture, charpente, isolation…</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="methode">
+  <div class="wrap">
+    <span class="tag">Notre méthode</span>
+    <h2 class="title">Comment ça se passe ?</h2>
+    <div class="steps">
+      <div class="step"><h3>Prise de contact</h3><p>Appelez-nous ou remplissez le formulaire en décrivant votre projet.</p></div>
+      <div class="step"><h3>Visite &amp; diagnostic</h3><p>Nous venons constater l’état de votre toiture ou de votre bâtiment.</p></div>
+      <div class="step"><h3>Devis détaillé</h3><p>Vous recevez un devis clair avec prix, planning et conditions.</p></div>
+      <div class="step"><h3>Réalisation</h3><p>Travaux réalisés dans les délais, puis nettoyage complet du chantier.</p></div>
+    </div>
+  </div>
+</section>
+
+<section class="zone" id="zone">
+  <div class="wrap">
+    <span class="tag">Zone d’intervention</span>
+    <h2 class="title">Basés à Mézières-sur-Seine</h2>
+    <p class="lead">Nous intervenons dans les Yvelines (78) et les communes voisines.</p>
+    <div class="towns">
+      <span>Mézières-sur-Seine</span><span>Épône</span><span>Mantes-la-Jolie</span><span>Mantes-la-Ville</span>
+      <span>Aubergenville</span><span>Guerville</span><span>Rosny-sur-Seine</span><span>Les Mureaux</span>
+      <span>Flins-sur-Seine</span><span>Limay</span><span>Buchelay</span><span>Magnanville</span>
+      <span>Meulan-en-Yvelines</span><span>Houdan</span><span>Septeuil</span><span>Et alentours…</span>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap">
+    <div>
+      <span class="tag">Contact</span>
+      <h2 class="title">Demandez votre devis gratuit</h2>
+      <p class="lead">Décrivez votre projet, nous vous rappelons rapidement.</p>
+      <div class="info">
+        <a href="tel:+33647991777"><span class="i"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span><small>Téléphone</small><strong>06 47 99 17 77</strong></span></a>
+        <a href="mailto:ncbatipro@yahoo.com"><span class="i"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span><span><small>Email</small><strong>ncbatipro@yahoo.com</strong></span></a>
+        <div><span class="i"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><small>Adresse</small><strong>30 rue de la Vallée, Porte 15<br>78970 Mézières-sur-Seine</strong></span></div>
+        <div><span class="i"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><span><small>Horaires</small><strong>Lun – Sam : 8h – 19h</strong></span></div>
+      </div>
+    </div>
+    <form id="devis">
+      <div class="row">
+        <label>Nom *<input name="nom" required></label>
+        <label>Téléphone *<input name="tel" type="tel" required></label>
+      </div>
+      <div class="row">
+        <label>Email<input name="email" type="email"></label>
+        <label>Ville<input name="ville"></label>
+      </div>
+      <label>Type de travaux
+        <select name="type">
+          <option>Toiture / couverture</option><option>Charpente</option><option>Isolation</option>
+          <option>Maçonnerie</option><option>Rénovation</option><option>Autre</option>
+        </select>
+      </label>
+      <label>Votre projet *<textarea name="message" required placeholder="Décrivez vos travaux (surface, état actuel, délai souhaité…)"></textarea></label>
+      <button class="btn btn-y" type="submit">Envoyer ma demande</button>
+      <p class="note">Le formulaire ouvre votre messagerie avec la demande pré-remplie. Vous pouvez aussi nous appeler directement.</p>
+    </form>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="foot">
+      <div>
+        <h4>Ciobanu Rénov</h4>
+        <p>Artisan du bâtiment : toiture, charpente, isolation, maçonnerie et rénovation dans les Yvelines.</p>
+      </div>
+      <div>
+        <h4>Contact</h4>
+        <p><a href="tel:+33647991777">06 47 99 17 77</a><br><a href="mailto:ncbatipro@yahoo.com">ncbatipro@yahoo.com</a><br>30 rue de la Vallée, Porte 15<br>78970 Mézières-sur-Seine</p>
+      </div>
+      <div>
+        <h4>Navigation</h4>
+        <p><a href="#services">Services</a><br><a href="#methode">Méthode</a><br><a href="#zone">Zone d’intervention</a><br><a href="#contact">Devis gratuit</a></p>
+      </div>
+    </div>
+    <div class="legal">
+      <span>© <span id="y"></span> Ciobanu Rénov – Tous droits réservés · <a href="mentions-legales.html">Mentions légales</a> · <a href="mentions-legales.html#confidentialite">Politique de confidentialité</a></span>
+      <span class="credit">Site créé par <a href="https://www.mitcodigital.de" target="_blank" rel="noopener"><b>Mitko Digital Production</b></a></span>
+    </div>
+  </div>
+</footer>
+
+<a class="call-fab" href="tel:+33647991777" aria-label="Appeler"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
+
+<script>
+document.getElementById('y').textContent=new Date().getFullYear();
+document.getElementById('devis').addEventListener('submit',function(e){
+  e.preventDefault();
+  var f=new FormData(this);
+  var body='Nom : '+f.get('nom')+'\nTéléphone : '+f.get('tel')+'\nEmail : '+f.get('email')+'\nVille : '+f.get('ville')+'\nTravaux : '+f.get('type')+'\n\n'+f.get('message');
+  location.href='mailto:ncbatipro@yahoo.com?subject='+encodeURIComponent('Demande de devis – '+f.get('type'))+'&body='+encodeURIComponent(body);
+});
+</script>
+</body>
+</html>
