@@ -235,6 +235,13 @@ form input:focus,form select:focus,form textarea:focus{outline:2px solid var(--y
 form .btn{justify-content:center;border:0;width:100%}
 form .chk{font-size:12px;color:var(--mut);display:flex;gap:8px;align-items:flex-start}
 form .chk input{width:auto;margin-top:2px}
+form{position:relative}
+.fmsg{border-radius:8px;padding:12px 14px;font-size:14px;font-weight:600}
+.fmsg.ok{background:#e8f7ee;color:#14532d;border:1px solid #86efac}
+.fmsg.err{background:#fdecec;color:#7f1d1d;border:1px solid #fca5a5}
+.fmsg a{color:inherit}
+form .btn[disabled]{opacity:.6;cursor:wait}
+form input.bad,form textarea.bad{border-color:#ef4444}
 .devis .pic{align-self:stretch;border-radius:14px;overflow:hidden;min-height:260px}
 .devis .pic img{width:100%;height:100%;object-fit:cover}
 
@@ -504,21 +511,24 @@ footer a:hover{color:var(--y)}
         <div><svg class="ic" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Devis<br>gratuit</div>
       </div>
     </div>
-    <form id="devis">
+    <form id="devis" action="https://formsubmit.co/ncbatipro@yahoo.com" method="POST" novalidate>
       <div class="fr">
-        <input name="nom" placeholder="Votre nom *" required>
-        <input name="email" type="email" placeholder="Email">
-        <input name="tel" type="tel" placeholder="Téléphone *" required>
+        <input name="Nom" placeholder="Votre nom *" autocomplete="name" required>
+        <input name="email" type="email" placeholder="Email" autocomplete="email">
+        <input name="Téléphone" type="tel" placeholder="Téléphone *" autocomplete="tel" required>
       </div>
       <div class="fr2">
-        <select name="type" aria-label="Type de travaux">
+        <select name="Travaux" aria-label="Type de travaux">
           <option>Maçonnerie</option><option>Charpente</option><option>Toiture</option>
           <option>Isolation / façade</option><option>Pavage / terrasse</option><option>Salle de bain</option><option>Rénovation intérieure</option><option>Terrassement</option><option>Autre</option>
         </select>
-        <textarea name="message" placeholder="Votre projet (facultatif)"></textarea>
+        <input name="Ville" placeholder="Ville / code postal" autocomplete="address-level2">
       </div>
-      <button class="btn btn-y" type="submit"><svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>Demander mon devis gratuit</button>
-      <label class="chk"><input type="checkbox" required><span>J’accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href="mentions-legales.html#confidentialite">politique de confidentialité</a>.</span></label>
+      <textarea name="Message" placeholder="Décrivez votre projet (facultatif)"></textarea>
+      <input type="text" name="_honey" tabindex="-1" autocomplete="off" style="position:absolute;left:-9999px" aria-hidden="true">
+      <button class="btn btn-y" type="submit"><svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg><span>Demander mon devis gratuit</span></button>
+      <label class="chk"><input type="checkbox" name="Consentement RGPD" value="oui" required><span>J’accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href="mentions-legales.html#confidentialite">politique de confidentialité</a>.</span></label>
+      <div class="fmsg" role="status" aria-live="polite" hidden></div>
     </form>
     <div class="pic"><img src="images/realisations/dalle-beton-thumb.jpg" alt="" loading="lazy" style="object-position:55% 50%"></div>
   </div>
@@ -636,12 +646,28 @@ document.querySelectorAll('#menu a').forEach(function(a){a.addEventListener('cli
   addEventListener('scroll',spy,{passive:true});spy();
 })();
 document.getElementById('y').textContent=new Date().getFullYear();
-document.getElementById('devis').addEventListener('submit',function(e){
-  e.preventDefault();
-  var f=new FormData(this);
-  var body='Nom : '+f.get('nom')+'\nTéléphone : '+f.get('tel')+'\nEmail : '+f.get('email')+'\nTravaux : '+f.get('type')+'\n\n'+(f.get('message')||'');
-  location.href='mailto:ncbatipro@yahoo.com?subject='+encodeURIComponent('Demande de devis – '+f.get('type'))+'&body='+encodeURIComponent(body);
-});
+(function(){
+  var f=document.getElementById('devis'), msg=f.querySelector('.fmsg'), btn=f.querySelector('button[type=submit]'), lbl=btn.querySelector('span');
+  function say(t,cls){msg.innerHTML=t;msg.className='fmsg '+cls;msg.hidden=false}
+  f.addEventListener('submit',function(e){
+    e.preventDefault();
+    var bad=[].filter.call(f.querySelectorAll('[required]'),function(i){var ko=i.type==='checkbox'?!i.checked:!i.value.trim();i.classList.toggle('bad',ko);return ko});
+    var em=f.elements.email; if(em.value&&!em.checkValidity()){em.classList.add('bad');bad.push(em)}
+    if(bad.length){say('Merci de remplir les champs obligatoires (nom, téléphone) et d’accepter la politique de confidentialité.','err');bad[0].focus();return}
+    var d={};new FormData(f).forEach(function(v,k){d[k]=v});
+    d._subject='Nouvelle demande de devis – '+d['Travaux']+(d['Ville']?' – '+d['Ville']:'');
+    d._template='table'; d._captcha='false';
+    if(d.email){d._replyto=d.email;d._autoresponse='Bonjour, nous avons bien reçu votre demande de devis. Ciobanu Rénov vous recontacte rapidement. Pour toute urgence : 06 47 99 17 77.'}
+    btn.disabled=true; lbl.textContent='Envoi en cours…';
+    fetch('https://formsubmit.co/ajax/ncbatipro@yahoo.com',{method:'POST',headers:{'Content-Type':'application/json','Accept':'application/json'},body:JSON.stringify(d)})
+      .then(function(r){return r.json().then(function(j){if(!r.ok||String(j.success)!=='true')throw j;return j})})
+      .then(function(){f.reset();say('Merci ! Votre demande a bien été envoyée. Nous vous recontactons rapidement.','ok')})
+      .catch(function(){
+        var body=Object.keys(d).filter(function(k){return k[0]!=='_'}).map(function(k){return k+' : '+d[k]}).join('\n');
+        say('L’envoi n’a pas abouti. Appelez-nous au <a href="tel:+33647991777">06 47 99 17 77</a> ou <a href="mailto:ncbatipro@yahoo.com?subject='+encodeURIComponent(d._subject)+'&body='+encodeURIComponent(body)+'">envoyez-nous un email</a>.','err')})
+      .then(function(){btn.disabled=false;lbl.textContent='Demander mon devis gratuit'});
+  });
+})();
 </script>
 </body>
 </html>
