@@ -48,6 +48,18 @@ h1{font-family:Montserrat;font-size:28px;margin:34px 0 6px}
 body.locked main,body.locked header{display:none}
 .out{background:none;border:1px solid #3a404a;color:#ddd;border-radius:999px;padding:8px 14px;font:inherit;font-size:14px;cursor:pointer;margin-left:8px}
 .out:hover{border-color:var(--y);color:var(--y)}
+.sec{display:flex;align-items:center;gap:10px;font-family:Montserrat;font-size:18px;margin:28px 0 12px}
+.sec svg{width:24px;height:24px;color:var(--y);stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
+.kpis{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.kpis.small{grid-template-columns:repeat(2,1fr);margin-top:12px}
+.kpi{background:var(--card);border:1px solid #2b313b;border-radius:14px;padding:18px}
+.kpi b{display:block;font-family:Montserrat;font-size:34px;font-weight:800;color:var(--y);line-height:1.1}
+.kpis.small .kpi b{font-size:24px;color:#fff}
+.kpi span{color:var(--mut);font-size:13px}
+.support{margin:34px 0 40px;background:var(--card);border:1px solid #2b313b;border-radius:16px;padding:20px;display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+.support b{display:block;font-family:Montserrat}
+.support span{color:var(--mut);font-size:14px}
+@media(max-width:700px){.kpis{grid-template-columns:1fr 1fr}.kpi b{font-size:28px}}
 @media(max-width:860px){.grid{grid-template-columns:1fr}.links{grid-template-columns:1fr}.stats iframe{height:1800px}}
 </style>
 </head>
@@ -62,42 +74,63 @@ body.locked main,body.locked header{display:none}
 </form></div>
 <header><div class="wrap nav"><a class="brand" href="../"><img src="../images/site/logo-icon.png" alt="">Ciobanu Rénov</a><span><a class="back" href="../">← Voir le site</a><button class="out" id="out">Déconnexion</button></span></div></header>
 <main class="wrap">
-  <h1>Espace admin</h1>
-  <p class="sub">Vos statistiques de visites et vos demandes de devis, au même endroit.</p>
-  <div class="grid">
-    <div class="card">
-      <svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>
-      <h2>Visiteurs du site</h2>
-      <p>Nombre de visites, pages vues, provenance (Google, Facebook…), appareils, villes, clics sur « Appeler » et « WhatsApp ».</p>
-      <a class="btn" id="b-stats" href="https://cloud.umami.is" target="_blank" rel="noopener">Ouvrir les statistiques</a>
-    </div>
-    <div class="card">
-      <svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>
-      <h2>Demandes de devis</h2>
-      <p>Toutes les demandes envoyées depuis le formulaire du site : nom, téléphone, ville, type de travaux, message. Une copie arrive aussi par email.</p>
-      <a class="btn" id="b-leads" href="https://formspree.io/forms" target="_blank" rel="noopener">Voir les demandes</a>
-    </div>
-    <div class="card">
-      <svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg>
-      <h2>Boîte mail</h2>
-      <p>Les nouvelles demandes et les réponses des clients arrivent sur ncbatipro@yahoo.com.</p>
-      <a class="btn" href="https://mail.yahoo.com" target="_blank" rel="noopener">Ouvrir Yahoo Mail</a>
-    </div>
+  <h1>Tableau de bord</h1>
+  <p class="sub">Consultation uniquement : les chiffres se mettent à jour automatiquement.</p>
+
+  <h2 class="sec"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg>Demandes de devis</h2>
+  <div class="kpis" data-kind="leads">
+    <div class="kpi"><b data-p="today">–</b><span>Aujourd’hui</span></div>
+    <div class="kpi"><b data-p="d3">–</b><span>3 derniers jours</span></div>
+    <div class="kpi"><b data-p="month">–</b><span>Ce mois-ci</span></div>
+    <div class="kpi"><b data-p="year">–</b><span>Cette année</span></div>
   </div>
-  <div class="stats" id="stats" hidden><div class="hd"><span>Statistiques en direct</span><a class="back" id="b-full" target="_blank" rel="noopener">Plein écran ↗</a></div><iframe id="frame" title="Statistiques Umami" loading="lazy"></iframe></div>
-  <div class="links">
-    <a href="https://search.google.com/search-console" target="_blank" rel="noopener">Google Search Console (référencement) <span>↗</span></a>
-    <a href="https://www.mitcodigital.de" target="_blank" rel="noopener">Support : Mitco Digital Productions <span>↗</span></a>
+
+  <h2 class="sec"><svg viewBox="0 0 24 24"><path d="M3 3v18h18"/><path d="M7 15l4-4 3 3 5-6"/></svg>Visiteurs du site</h2>
+  <div class="kpis" data-kind="visitors">
+    <div class="kpi"><b data-p="today">–</b><span>Aujourd’hui</span></div>
+    <div class="kpi"><b data-p="d3">–</b><span>3 derniers jours</span></div>
+    <div class="kpi"><b data-p="month">–</b><span>Ce mois-ci</span></div>
+    <div class="kpi"><b data-p="year">–</b><span>Cette année</span></div>
   </div>
-  <p class="note" id="cfg"></p>
+  <div class="kpis small" data-kind="clicks">
+    <div class="kpi"><b data-p="month" data-ev="Appel téléphone">–</b><span>Clics « Appeler » ce mois-ci</span></div>
+    <div class="kpi"><b data-p="month" data-ev="WhatsApp">–</b><span>Clics « WhatsApp » ce mois-ci</span></div>
+  </div>
+  <p class="note" id="status"></p>
+
+  <div class="support">
+    <div><b>Besoin d’aide ou d’une modification du site ?</b><span>Mitco Digital Productions</span></div>
+    <a class="btn" href="https://www.mitcodigital.de" target="_blank" rel="noopener">Contacter le support</a>
+  </div>
 </main>
 <script src="../config.js"></script>
 <script>
-var S=window.SITE||{}, miss=[];
-if(S.formspree)document.getElementById('b-leads').href='https://formspree.io/forms/'+S.formspree+'/submissions';else miss.push('Formspree');
-if(S.umamiShare){document.getElementById('b-stats').href=S.umamiShare;document.getElementById('b-full').href=S.umamiShare;document.getElementById('frame').src=S.umamiShare;document.getElementById('stats').hidden=false}
-if(!S.umami)miss.push('Umami');
-if(miss.length)document.getElementById('cfg').textContent='Configuration en attente : '+miss.join(', ')+'.';
+/* Lecture seule : uniquement le lien de partage public Umami (aucun mot de passe ni clé secrète) */
+(function(){
+  var S=window.SITE||{}, st=document.getElementById('status');
+  function setAll(sel,v){document.querySelectorAll(sel).forEach(function(b){b.textContent=v})}
+  if(!S.umamiShare){st.textContent='Statistiques en cours de configuration.';return}
+  var u=new URL(S.umamiShare), shareId=u.pathname.split('/share/')[1].split('/')[0];
+  var now=new Date(), day=new Date(now.getFullYear(),now.getMonth(),now.getDate()).getTime();
+  var P={today:day, d3:now.getTime()-3*864e5, month:new Date(now.getFullYear(),now.getMonth(),1).getTime(), year:new Date(now.getFullYear(),0,1).getTime()};
+  var bases=[u.origin+'/api',u.origin+'/analytics/eu/api',u.origin+'/analytics/us/api'];
+  function get(base,path,tok){return fetch(base+path,{headers:tok?{'x-umami-share-token':tok}:{}}).then(function(r){if(!r.ok)throw r.status;return r.json()})}
+  function connect(i){if(i>=bases.length)return Promise.reject('api');return get(bases[i],'/share/'+shareId).then(function(j){return {base:bases[i],id:j.websiteId,tok:j.token}}).catch(function(){return connect(i+1)})}
+  function num(v){return typeof v==='object'&&v?(v.value||0):(v||0)}
+  connect(0).then(function(c){
+    var end=Date.now(), jobs=[];
+    Object.keys(P).forEach(function(k){
+      var q='?startAt='+P[k]+'&endAt='+end;
+      jobs.push(get(c.base,'/websites/'+c.id+'/stats'+q,c.tok).then(function(j){setAll('[data-kind=visitors] [data-p='+k+']',num(j.visitors))}));
+      jobs.push(get(c.base,'/websites/'+c.id+'/metrics'+q+'&type=event',c.tok).then(function(rows){
+        var m={};(rows||[]).forEach(function(r){m[r.x]=r.y});
+        setAll('[data-kind=leads] [data-p='+k+']',m['Demande de devis']||0);
+        if(k==='month')document.querySelectorAll('[data-ev]').forEach(function(b){b.textContent=m[b.dataset.ev]||0});
+      }));
+    });
+    return Promise.all(jobs).then(function(){st.textContent='Mis à jour le '+new Date().toLocaleString('fr-FR')+'.'});
+  }).catch(function(){st.innerHTML='Les chiffres ne peuvent pas être chargés pour le moment. <a href="'+S.umamiShare+'" target="_blank" rel="noopener" style="color:#FFC20E">Voir les statistiques</a>'});
+})();
 </script>
 <script>
 (function(){
