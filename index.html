@@ -127,6 +127,24 @@ header{position:sticky;top:0;z-index:50;background:rgba(14,16,20,.78);backdrop-f
 .adv li svg{width:20px;height:20px;color:var(--y);flex:none;margin-top:1px}
 .adv .house{position:absolute;right:-10px;bottom:-10px;width:190px;color:rgba(255,255,255,.07)}
 
+/* réalisations */
+.real{padding:20px 0 64px}
+.gal{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:230px;gap:14px;grid-auto-flow:dense}
+.ph{position:relative;border-radius:12px;overflow:hidden;display:block;color:#fff;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.1)}
+.ph.tall{grid-row:span 2}
+.ph.wide{grid-column:span 2}
+.ph img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.ph:hover img{transform:scale(1.05)}
+.ph::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,12,16,.8),rgba(10,12,16,0) 40%)}
+.ph span{position:absolute;left:14px;bottom:12px;z-index:1;font-family:Montserrat;font-weight:700;font-size:15px}
+.lb{position:fixed;inset:0;z-index:100;background:rgba(8,10,14,.94);display:flex;align-items:center;justify-content:center}
+.lb[hidden]{display:none}
+.lb figure{max-width:92vw;max-height:88vh;text-align:center}
+.lb img{max-width:92vw;max-height:80vh;border-radius:8px;margin:0 auto}
+.lb figcaption{color:#fff;font-family:Montserrat;font-weight:700;margin-top:12px}
+.lb button{position:absolute;background:rgba(255,255,255,.12);color:#fff;border:0;width:52px;height:52px;border-radius:50%;font-size:30px;cursor:pointer;line-height:1}
+.lb button:hover{background:var(--y);color:#111}
+.lb-x{top:18px;right:18px}.lb-p{left:18px;top:50%;transform:translateY(-50%)}.lb-n{right:18px;top:50%;transform:translateY(-50%)}
 /* avant/après */
 .ba-sec{padding:20px 0 60px}
 .ba-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:24px}
@@ -230,6 +248,8 @@ footer a:hover{color:var(--y)}
   .proc{grid-template-columns:1fr}.proc>img{height:150px}
   .steps{grid-template-columns:1fr 1fr;row-gap:20px}
   .ba-grid{grid-template-columns:1fr}
+  .gal{grid-template-columns:1fr 1fr;grid-auto-rows:180px}
+  .ph.wide{grid-column:span 2}
   .band .wrap{grid-template-columns:1fr}
   .devis .wrap{grid-template-columns:1fr}
   .call-fab{display:grid}
@@ -271,7 +291,7 @@ footer a:hover{color:var(--y)}
       <li><a href="#top" class="on">Accueil</a></li>
       <li><a href="#services">Services</a></li>
       <li><a href="#methode">Méthode</a></li>
-      <li><a href="#realisations">Avant / Après</a></li>
+      <li><a href="#realisations">Réalisations</a></li>
       <li><a href="#engagements">Engagements</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -329,12 +349,12 @@ footer a:hover{color:var(--y)}
       <span class="uline"></span>
     </div>
     <div class="tiles">
-      <a class="tile" href="#contact"><img src="images/site/terrassement.jpg" alt="Terrassement" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="12" width="12" height="6" rx="1"/><path d="M14 14h3l3-6M6 12V8h5l2 4"/><circle cx="5" cy="19" r="1.5"/><circle cx="11" cy="19" r="1.5"/></svg></span><h3>Terrassement</h3><small>Préparation du terrain, évacuation des gravats en déchetterie.</small></div></a>
-      <a class="tile" href="#contact"><img src="images/site/maconnerie.jpg" alt="Maçonnerie" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16"/><path d="M3 9h18M3 14h18M9 4v5M15 9v5M9 14v6"/></svg></span><h3>Maçonnerie</h3><small>Murs, reprises de maçonnerie, jonctions, rives et solins.</small></div></a>
-      <a class="tile" href="#contact"><img src="images/site/charpente.jpg" alt="Charpente" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M2 20L12 4l10 16"/><path d="M7 12h10M5 16h14M12 4v16"/></svg></span><h3>Charpente</h3><small>Remplacement des chevrons et liteaux, renforcement.</small></div></a>
-      <a class="tile" href="#contact"><img src="images/site/toiture.jpg" alt="Toiture" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></span><h3>Toiture</h3><small>Dépose et repose de tuiles, réparation de fuites, faîtage.</small></div></a>
-      <a class="tile" href="#contact"><img src="images/site/facade.jpg" alt="Isolation et façade" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></span><h3>Isolation &amp; façade</h3><small>Isolation des combles, murs et façade pour plus de confort.</small></div></a>
-      <a class="tile" href="#contact"><img src="images/site/renovation.jpg" alt="Rénovation et finitions" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M14 4l6 6-9 9H5v-6z"/><path d="M12 6l6 6"/></svg></span><h3>Rénovation</h3><small>Remise en état et finitions intérieures et extérieures.</small></div></a>
+      <a class="tile" href="#realisations"><img src="images/site/tile-fondations.jpg" alt="Terrassement et fondations" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="12" width="12" height="6" rx="1"/><path d="M14 14h3l3-6M6 12V8h5l2 4"/><circle cx="5" cy="19" r="1.5"/><circle cx="11" cy="19" r="1.5"/></svg></span><h3>Terrassement</h3><small>Fouilles, fondations, évacuation des terres et gravats.</small></div></a>
+      <a class="tile" href="#realisations"><img src="images/site/tile-dalle-beton.jpg" alt="Coulage d’une dalle béton armé" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16"/><path d="M3 9h18M3 14h18M9 4v5M15 9v5M9 14v6"/></svg></span><h3>Maçonnerie &amp; béton</h3><small>Dalles en béton armé, murs, reprises de maçonnerie.</small></div></a>
+      <a class="tile" href="#realisations"><img src="images/site/toiture.jpg" alt="Toiture" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></span><h3>Charpente &amp; toiture</h3><small>Chevrons, liteaux, dépose et repose de tuiles.</small></div></a>
+      <a class="tile" href="#realisations"><img src="images/site/facade.jpg" alt="Isolation et façade" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></span><h3>Isolation &amp; façade</h3><small>Isolation des combles, murs et façade.</small></div></a>
+      <a class="tile" href="#realisations"><img src="images/site/tile-pavage.jpg" alt="Allée pavée" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M3 8h8v5H3zM13 8h8v5h-8zM3 15h5v5H3zM10 15h11v5H10zM3 3h12v3H3zM17 3h4v3h-4z"/></svg></span><h3>Pavage &amp; terrasses</h3><small>Allées pavées, terrasses en bois, aménagements extérieurs.</small></div></a>
+      <a class="tile" href="#realisations"><img src="images/site/tile-renovation-interieure.jpg" alt="Appartement rénové" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M14 4l6 6-9 9H5v-6z"/><path d="M12 6l6 6"/></svg></span><h3>Rénovation intérieure</h3><small>Sols, peinture, placards, finitions clés en main.</small></div></a>
     </div>
   </div>
 </section>
@@ -342,7 +362,7 @@ footer a:hover{color:var(--y)}
 <section class="duo" id="methode">
   <div class="wrap">
     <div class="dcard proc">
-      <img src="images/site/process.jpg" alt="" loading="lazy">
+      <img src="images/realisations/fondations-thumb.jpg" alt="" loading="lazy">
       <div class="in">
         <h3>Comment se déroule votre projet</h3>
         <div class="steps">
@@ -367,20 +387,22 @@ footer a:hover{color:var(--y)}
   </div>
 </section>
 
-<section class="ba-sec" id="realisations">
+<section class="real" id="realisations">
   <div class="wrap">
     <div class="ba-head">
-      <div><span class="tag">Avant / Après</span><h2 class="h2">Chaque étape d’un chantier maîtrisée</h2></div>
+      <div><span class="tag">Nos réalisations</span><h2 class="h2">Nos chantiers en images</h2></div>
       <a href="#contact" class="btn btn-d">Parler de votre projet <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
-    <div class="ba-grid">
-      <div><div class="ba"><img src="images/site/av1.jpg" alt="Terrain avant travaux" loading="lazy"><img class="after" src="images/site/ap1.jpg" alt="Murs en maçonnerie" loading="lazy"><div class="hand"></div><input type="range" min="0" max="100" value="50" aria-label="Comparer avant et après"><span class="lb l">Avant</span><span class="lb r">Après</span></div><div class="ba-cap">Gros œuvre<small>Du terrain nu aux murs montés</small></div></div>
-      <div><div class="ba"><img src="images/site/av2.jpg" alt="Murs sans toiture" loading="lazy"><img class="after" src="images/site/ap2.jpg" alt="Toiture posée" loading="lazy"><div class="hand"></div><input type="range" min="0" max="100" value="50" aria-label="Comparer avant et après"><span class="lb l">Avant</span><span class="lb r">Après</span></div><div class="ba-cap">Charpente &amp; toiture<small>Charpente, couverture et début de façade</small></div></div>
-      <div><div class="ba"><img src="images/site/av3.jpg" alt="Maison en brique sous échafaudage" loading="lazy"><img class="after" src="images/site/ap3.jpg" alt="Maison terminée" loading="lazy"><div class="hand"></div><input type="range" min="0" max="100" value="50" aria-label="Comparer avant et après"><span class="lb l">Avant</span><span class="lb r">Après</span></div><div class="ba-cap">Façade &amp; finitions<small>Isolation, enduit et aménagements extérieurs</small></div></div>
+    <div class="gal" id="gal">
+      <a class="ph tall" href="images/realisations/pavage.jpg" data-cap="Pavage"><img src="images/realisations/pavage-thumb.jpg" alt="Allée en pavés" loading="lazy"><span>Pavage</span></a>
+      <a class="ph wide" href="images/realisations/dalle-beton.jpg" data-cap="Dalle béton armé"><img src="images/realisations/dalle-beton-thumb.jpg" alt="Coulage d’une dalle en béton armé" loading="lazy"><span>Dalle béton armé</span></a>
+      <a class="ph tall" href="images/realisations/fondations.jpg" data-cap="Fondations"><img src="images/realisations/fondations-thumb.jpg" alt="Chantier de fondations avec pompe à béton" loading="lazy"><span>Fondations</span></a>
+      <a class="ph" href="images/realisations/terrasse-bois.jpg" data-cap="Terrasse bois"><img src="images/realisations/terrasse-bois-thumb.jpg" alt="Terrasse en bois exotique avec bordure" loading="lazy"><span>Terrasse bois</span></a>
+      <a class="ph" href="images/realisations/renovation-interieure.jpg" data-cap="Rénovation intérieure"><img src="images/realisations/renovation-interieure-thumb.jpg" alt="Appartement rénové : sol stratifié et placards" loading="lazy"><span>Rénovation intérieure</span></a>
     </div>
-    <p class="note">Images d’illustration. Faites glisser pour comparer.</p>
   </div>
 </section>
+<div class="lb" id="lb" hidden><button class="lb-x" aria-label="Fermer">×</button><button class="lb-p" aria-label="Précédente">‹</button><figure><img alt=""><figcaption></figcaption></figure><button class="lb-n" aria-label="Suivante">›</button></div>
 
 <section class="band" id="engagements">
   <div class="wrap">
@@ -413,14 +435,14 @@ footer a:hover{color:var(--y)}
       <div class="fr2">
         <select name="type" aria-label="Type de travaux">
           <option>Maçonnerie</option><option>Charpente</option><option>Toiture</option>
-          <option>Isolation / façade</option><option>Rénovation</option><option>Terrassement</option><option>Autre</option>
+          <option>Isolation / façade</option><option>Pavage / terrasse</option><option>Rénovation intérieure</option><option>Terrassement</option><option>Autre</option>
         </select>
         <textarea name="message" placeholder="Votre projet (facultatif)"></textarea>
       </div>
       <button class="btn btn-y" type="submit"><svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>Demander mon devis gratuit</button>
       <label class="chk"><input type="checkbox" required><span>J’accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href="mentions-legales.html#confidentialite">politique de confidentialité</a>.</span></label>
     </form>
-    <div class="pic"><img src="images/site/devis.jpg" alt="" loading="lazy"></div>
+    <div class="pic"><img src="images/realisations/dalle-beton-thumb.jpg" alt="" loading="lazy" style="object-position:55% 50%"></div>
   </div>
 </section>
 
@@ -432,11 +454,11 @@ footer a:hover{color:var(--y)}
     </div>
     <div>
       <h4>Accès rapide</h4>
-      <ul><li><a href="#top">Accueil</a></li><li><a href="#services">Services</a></li><li><a href="#methode">Méthode</a></li><li><a href="#realisations">Avant / Après</a></li><li><a href="#contact">Contact</a></li></ul>
+      <ul><li><a href="#top">Accueil</a></li><li><a href="#services">Services</a></li><li><a href="#methode">Méthode</a></li><li><a href="#realisations">Réalisations</a></li><li><a href="#contact">Contact</a></li></ul>
     </div>
     <div>
       <h4>Nos services</h4>
-      <ul><li>Terrassement</li><li>Maçonnerie</li><li>Charpente</li><li>Toiture</li><li>Isolation &amp; façade</li><li>Rénovation</li></ul>
+      <ul><li>Terrassement</li><li>Maçonnerie &amp; béton</li><li>Charpente &amp; toiture</li><li>Isolation &amp; façade</li><li>Pavage &amp; terrasses</li><li>Rénovation intérieure</li></ul>
     </div>
     <div>
       <h4>Contact</h4>
@@ -503,6 +525,16 @@ footer a:hover{color:var(--y)}
   addEventListener('resize',function(){size();update()});
   if(reduce){load(N-1);want=N-1}else{load(0);for(var i=1;i<N;i++)(function(i){setTimeout(function(){load(i)},i*20)})(i)}
   size();update();
+})();
+(function(){
+  var lb=document.getElementById('lb'),im=lb.querySelector('img'),cap=lb.querySelector('figcaption'),items=[].slice.call(document.querySelectorAll('#gal .ph')),k=0;
+  function show(i){k=(i+items.length)%items.length;im.src=items[k].href;im.alt=items[k].querySelector('img').alt;cap.textContent=items[k].dataset.cap;lb.hidden=false}
+  items.forEach(function(a,i){a.addEventListener('click',function(e){e.preventDefault();show(i)})});
+  lb.querySelector('.lb-x').onclick=function(){lb.hidden=true};
+  lb.querySelector('.lb-p').onclick=function(){show(k-1)};
+  lb.querySelector('.lb-n').onclick=function(){show(k+1)};
+  lb.addEventListener('click',function(e){if(e.target===lb)lb.hidden=true});
+  addEventListener('keydown',function(e){if(lb.hidden)return;if(e.key==='Escape')lb.hidden=true;if(e.key==='ArrowLeft')show(k-1);if(e.key==='ArrowRight')show(k+1)});
 })();
 document.querySelectorAll('.ba').forEach(function(b){
   var inp=b.querySelector('input'),a=b.querySelector('.after'),h=b.querySelector('.hand');
