@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://mitcohandel-lang.github.io/ciobanu-renov/sitemap.xml
+Sitemap: https://ciobanu-renov.fr/sitemap.xml
