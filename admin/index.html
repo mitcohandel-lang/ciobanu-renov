@@ -36,11 +36,31 @@ h1{font-family:Montserrat;font-size:28px;margin:34px 0 6px}
 .links a:hover{border-color:var(--y)}
 .links a span{color:var(--mut)}
 .note{font-size:13px;color:var(--mut);margin-top:6px}
+.gate{position:fixed;inset:0;background:#0f1216;display:grid;place-items:center;z-index:10;padding:20px}
+.gate[hidden]{display:none}
+.gate form{background:var(--card);border:1px solid #2b313b;border-radius:16px;padding:28px;width:100%;max-width:360px;display:grid;gap:12px}
+.gate img{width:56px;height:56px;border-radius:12px;background:#fff;padding:3px;margin:0 auto 4px}
+.gate h1{margin:0;text-align:center;font-size:22px}
+.gate input{font:inherit;padding:12px 14px;border-radius:10px;border:1px solid #3a404a;background:#0f1216;color:#fff;width:100%}
+.gate input:focus{outline:2px solid var(--y);border-color:var(--y)}
+.gate button{border:0;cursor:pointer}
+.gate .err{color:#fca5a5;font-size:13px;text-align:center;min-height:18px}
+body.locked main,body.locked header{display:none}
+.out{background:none;border:1px solid #3a404a;color:#ddd;border-radius:999px;padding:8px 14px;font:inherit;font-size:14px;cursor:pointer;margin-left:8px}
+.out:hover{border-color:var(--y);color:var(--y)}
 @media(max-width:860px){.grid{grid-template-columns:1fr}.links{grid-template-columns:1fr}.stats iframe{height:1800px}}
 </style>
 </head>
-<body>
-<header><div class="wrap nav"><a class="brand" href="../"><img src="../images/site/logo-icon.png" alt="">Ciobanu Rénov</a><a class="back" href="../">← Voir le site</a></div></header>
+<body class="locked">
+<div class="gate" id="gate"><form id="login" autocomplete="on">
+  <img src="../images/site/logo-icon.png" alt="">
+  <h1>Espace admin</h1>
+  <input name="login" placeholder="Identifiant" autocomplete="username" required>
+  <input name="pass" type="password" placeholder="Mot de passe" autocomplete="current-password" required>
+  <button class="btn" type="submit">Se connecter</button>
+  <div class="err" id="err"></div>
+</form></div>
+<header><div class="wrap nav"><a class="brand" href="../"><img src="../images/site/logo-icon.png" alt="">Ciobanu Rénov</a><span><a class="back" href="../">← Voir le site</a><button class="out" id="out">Déconnexion</button></span></div></header>
 <main class="wrap">
   <h1>Espace admin</h1>
   <p class="sub">Vos statistiques de visites et vos demandes de devis, au même endroit.</p>
@@ -66,9 +86,7 @@ h1{font-family:Montserrat;font-size:28px;margin:34px 0 6px}
   </div>
   <div class="stats" id="stats" hidden><div class="hd"><span>Statistiques en direct</span><a class="back" id="b-full" target="_blank" rel="noopener">Plein écran ↗</a></div><iframe id="frame" title="Statistiques Umami" loading="lazy"></iframe></div>
   <div class="links">
-    <a href="https://business.google.com" target="_blank" rel="noopener">Fiche Google (avis, photos, horaires) <span>↗</span></a>
     <a href="https://search.google.com/search-console" target="_blank" rel="noopener">Google Search Console (référencement) <span>↗</span></a>
-    <a href="https://github.com/mitcohandel-lang/ciobanu-renov" target="_blank" rel="noopener">Fichiers du site (GitHub) <span>↗</span></a>
     <a href="https://www.mitcodigital.de" target="_blank" rel="noopener">Support : Mitco Digital Productions <span>↗</span></a>
   </div>
   <p class="note" id="cfg"></p>
@@ -80,6 +98,19 @@ if(S.formspree)document.getElementById('b-leads').href='https://formspree.io/for
 if(S.umamiShare){document.getElementById('b-stats').href=S.umamiShare;document.getElementById('b-full').href=S.umamiShare;document.getElementById('frame').src=S.umamiShare;document.getElementById('stats').hidden=false}
 if(!S.umami)miss.push('Umami');
 if(miss.length)document.getElementById('cfg').textContent='Configuration en attente : '+miss.join(', ')+'.';
+</script>
+<script>
+(function(){
+  var SALT='ciobanu-renov-admin-v1', OK=["e4d5238aa80ee89b590674d53125dbb139930bbe9dedaedda656bc38ed23eea4", "c8085e1df6eff228e69bce6bd1c2afe8a47f814a8ad7eb6322dccbf059731d9f"], KEY='cr-admin';
+  function ok(){document.body.classList.remove('locked');document.getElementById('gate').hidden=true}
+  try{if(sessionStorage.getItem(KEY)==='1')ok()}catch(e){}
+  async function sha(t){var b=await crypto.subtle.digest('SHA-256',new TextEncoder().encode(t));return [...new Uint8Array(b)].map(function(x){return x.toString(16).padStart(2,'0')}).join('')}
+  document.getElementById('login').addEventListener('submit',async function(e){
+    e.preventDefault();var f=e.target,h=await sha(SALT+'|'+f.login.value.trim().toLowerCase()+'|'+f.pass.value.replace(/\s/g,''));
+    if(OK.indexOf(h)>-1){try{sessionStorage.setItem(KEY,'1')}catch(e){}ok()}else{document.getElementById('err').textContent='Identifiant ou mot de passe incorrect.';f.pass.value='';f.pass.focus()}
+  });
+  document.getElementById('out').onclick=function(){try{sessionStorage.removeItem(KEY)}catch(e){}location.reload()};
+})();
 </script>
 </body>
 </html>
