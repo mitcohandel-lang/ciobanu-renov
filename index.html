@@ -78,7 +78,8 @@ header{position:sticky;top:0;z-index:50;background:rgba(14,16,20,.78);backdrop-f
 .badge b{display:block;color:var(--y);font-size:26px}
 .badge small{font-size:11px;display:block;line-height:1.25}
 .stages{position:absolute;right:max(24px,calc((100vw - 1200px)/2 + 24px));top:50%;transform:translateY(-40%);display:flex;flex-direction:column;gap:14px;align-items:flex-end}
-.st{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:600;color:rgba(255,255,255,0);transition:.3s;cursor:pointer;background:none;border:0;font-family:inherit;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+.st{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:600;color:rgba(255,255,255,0);transition:.3s;cursor:pointer;background:none;border:0;font-family:inherit}
+.st.on,.st:hover{text-shadow:0 1px 6px rgba(0,0,0,.7)}
 .st i{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.5);transition:.3s;flex:none}
 .st.on{color:#fff}
 .st.on i{background:var(--y);box-shadow:0 0 0 4px rgba(255,194,14,.3)}
@@ -469,7 +470,7 @@ footer a:hover{color:var(--y)}
 
 <script>
 (function(){
-  var N=120, FRAMES='images/hero/';
+  var N=120, PORTRAIT=innerWidth/innerHeight<0.9, FRAMES=PORTRAIT?'images/hero/m/':'images/hero/hd/';
   var sec=document.querySelector('.hs'), cv=document.getElementById('hs-canvas'), cx=cv.getContext('2d');
   var bar=document.querySelector('.hs-bar'), hint=document.querySelector('.hs-hint'), st=[].slice.call(document.querySelectorAll('.st'));
   var cuts=st.map(function(b){return +b.dataset.p});
@@ -483,7 +484,7 @@ footer a:hover{color:var(--y)}
     if(!force&&want===cur)return;
     var im=nearest(want);if(!im)return;cur=want;
     var W=cv.width,H=cv.height,s=Math.max(W/im.naturalWidth,H/im.naturalHeight),w=im.naturalWidth*s,h=im.naturalHeight*s;
-    var ox=(W-w)/2; if(W<H) ox=(W-w)*0.62;
+    var ox=(W-w)/2; if(!PORTRAIT&&W<H) ox=(W-w)*0.62;
     cx.drawImage(im,ox,(H-h)/2,w,h);
   }
   function total(){return sec.offsetHeight-cv.clientHeight}
