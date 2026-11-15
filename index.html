@@ -619,6 +619,13 @@ document.querySelectorAll('.ba').forEach(function(b){
   inp.addEventListener('input',function(){a.style.clipPath='inset(0 0 0 '+inp.value+'%)';h.style.left=inp.value+'%'});
 });
 document.querySelectorAll('#menu a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('menu').classList.remove('open')})});
+(function(){ // underline the menu item of the section on screen
+  var links=[].slice.call(document.querySelectorAll('#menu a')), secs=links.map(function(l){return document.querySelector(l.getAttribute('href'))});
+  function spy(){var y=innerHeight*0.35,k=0;secs.forEach(function(s,i){if(s&&s.getBoundingClientRect().top<=y)k=i});
+    if(innerHeight+scrollY>=document.documentElement.scrollHeight-4)k=links.length-1;
+    links.forEach(function(l,i){l.classList.toggle('on',i===k)})}
+  addEventListener('scroll',spy,{passive:true});spy();
+})();
 document.getElementById('y').textContent=new Date().getFullYear();
 document.getElementById('devis').addEventListener('submit',function(e){
   e.preventDefault();
