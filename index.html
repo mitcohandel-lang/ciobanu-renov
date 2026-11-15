@@ -3,168 +3,283 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ciobanu Rénov – Toiture, charpente, isolation | Mézières-sur-Seine (78)</title>
-<meta name="description" content="Ciobanu Rénov, artisan du bâtiment à Mézières-sur-Seine (Yvelines) : toiture, charpente, isolation, maçonnerie et rénovation. Devis gratuit au 06 47 99 17 77.">
-<link rel="icon" href="logo.jpg">
+<title>Ciobanu Rénov – Bâtiment &amp; rénovation | Mézières-sur-Seine (78)</title>
+<meta name="description" content="Ciobanu Rénov, artisan du bâtiment à Mézières-sur-Seine (Yvelines) : maçonnerie, charpente, toiture, isolation, façade et rénovation. Devis gratuit au 06 47 99 17 77.">
+<link rel="icon" href="images/site/logo-icon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
 :root{
-  --yellow:#F5B301; --yellow-dark:#D99A00; --black:#151515; --ink:#2a2a2a;
-  --muted:#666; --bg:#ffffff; --soft:#f6f4ee; --line:#e6e2d6; --radius:14px;
+  --y:#FFC20E; --y2:#F2A900; --ink:#14171c; --card:#1c2027; --line:#2e343e;
+  --tx:#1d1f23; --mut:#5d636c; --mut2:#a9b0bb; --bg:#fff;
 }
 *{box-sizing:border-box;margin:0;padding:0}
 html{scroll-behavior:smooth}
-body{font-family:Inter,system-ui,sans-serif;color:var(--ink);background:var(--bg);line-height:1.6;font-size:16px}
-h1,h2,h3{font-family:Montserrat,sans-serif;color:var(--black);line-height:1.2}
+body{font-family:Inter,system-ui,sans-serif;color:var(--tx);background:var(--bg);line-height:1.55;font-size:16px;overflow-x:hidden}
+h1,h2,h3,h4{font-family:Montserrat,sans-serif;line-height:1.15}
 a{color:inherit}
 img{max-width:100%;display:block}
-.wrap{max-width:1160px;margin:0 auto;padding:0 20px}
-.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:999px;font-weight:600;text-decoration:none;border:2px solid transparent;transition:.2s;cursor:pointer;font-size:16px}
-.btn-y{background:var(--yellow);color:var(--black)}
-.btn-y:hover{background:var(--yellow-dark)}
-.btn-o{border-color:#fff;color:#fff}
-.btn-o:hover{background:#fff;color:var(--black)}
-.tag{display:inline-block;font-family:Montserrat;font-weight:700;font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--yellow-dark);margin-bottom:12px}
-section{padding:90px 0}
-.title{font-size:clamp(28px,4vw,40px);margin-bottom:16px}
-.lead{color:var(--muted);max-width:640px;font-size:17px}
+.wrap{max-width:1200px;margin:0 auto;padding:0 24px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 26px;border-radius:10px;font-weight:700;font-family:Montserrat;font-size:15px;text-decoration:none;border:2px solid transparent;transition:.2s;cursor:pointer}
+.btn svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2.2;stroke-linecap:round;stroke-linejoin:round}
+.btn-y{background:var(--y);color:#111;box-shadow:0 8px 24px rgba(255,194,14,.25)}
+.btn-y:hover{background:var(--y2)}
+.btn-o{border-color:rgba(255,255,255,.85);color:#fff;background:rgba(0,0,0,.25)}
+.btn-o:hover{background:#fff;color:#111}
+.btn-d{border-color:var(--y);color:#111;background:#fff;padding:9px 18px;font-size:14px;border-radius:999px}
+.btn-d:hover{background:var(--y)}
+.tag{display:inline-block;font-family:Montserrat;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:var(--y2);margin-bottom:8px}
+.h2{font-size:clamp(26px,3.2vw,36px);color:#111}
+.uline{display:block;width:56px;height:4px;border-radius:4px;background:var(--y);margin-top:18px}
+.ic{stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 
-/* header */
-header{position:sticky;top:0;z-index:50;background:#fff;border-bottom:1px solid var(--line)}
-.nav{display:flex;align-items:center;justify-content:space-between;height:76px}
-.brand img{height:58px;width:auto}
-.menu{display:flex;gap:28px;align-items:center;list-style:none}
-.menu a{text-decoration:none;font-weight:500}
-.menu a:hover{color:var(--yellow-dark)}
-.menu .btn{padding:10px 20px;color:var(--black)}
-.burger{display:none;background:none;border:0;font-size:28px;cursor:pointer}
+/* top bar + header */
+.topbar{background:#0d0f13;color:#d6d9de;font-size:13px;position:relative;z-index:51}
+.topbar .wrap{display:flex;justify-content:space-between;align-items:center;height:36px;gap:16px}
+.topbar span,.topbar a{display:inline-flex;align-items:center;gap:7px;text-decoration:none}
+.topbar svg{width:15px;height:15px}
+.topbar .right{display:flex;gap:22px}
+.topbar .wa svg{color:#25D366}
+header{position:sticky;top:0;z-index:50;background:rgba(14,16,20,.78);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav{display:flex;align-items:center;justify-content:space-between;height:76px;gap:20px}
+.brand{display:flex;align-items:center;gap:12px;text-decoration:none;color:#fff}
+.brand img{width:50px;height:50px;border-radius:12px;background:#fff;padding:3px}
+.brand b{font-family:Montserrat;font-size:21px;font-weight:800;letter-spacing:-.01em}
+.menu{display:flex;gap:26px;align-items:center;list-style:none}
+.menu a{text-decoration:none;color:#fff;font-weight:600;font-size:15px;padding:6px 0;border-bottom:3px solid transparent}
+.menu a:hover,.menu a.on{border-color:var(--y)}
+.nav-r{display:flex;align-items:center;gap:16px}
+.nav-r .ico-l{color:#fff;display:grid;place-items:center}
+.nav-r .ico-l svg{width:24px;height:24px}
+.nav-r .btn{padding:11px 18px}
+.burger{display:none;background:none;border:0;color:#fff;cursor:pointer}
+.burger svg{width:30px;height:30px}
 
-/* hero – scroll animation */
-.hs{position:relative;padding:0;height:380vh;background:var(--black);color:#fff}
-.hs-sticky{position:sticky;top:77px;height:calc(100vh - 77px);height:calc(100svh - 77px);overflow:hidden}
+/* hero scroll animation */
+.hs{position:relative;height:420vh;background:var(--ink);color:#fff;margin-top:-77px}
+.hs-sticky{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden}
 .hs canvas{position:absolute;inset:0;width:100%;height:100%;display:block}
-.hs-shade{position:absolute;inset:0;background:linear-gradient(90deg,rgba(10,10,10,.82) 0%,rgba(10,10,10,.55) 42%,rgba(10,10,10,0) 75%),linear-gradient(0deg,rgba(10,10,10,.7) 0%,rgba(10,10,10,0) 30%)}
-.hs-content{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center}
-.hs h1{color:#fff;font-size:clamp(32px,5.2vw,58px);font-weight:800;max-width:640px}
-.hs h1 span{color:var(--yellow)}
-.hs p{color:#e2e2e2;font-size:18px;margin:20px 0 32px;max-width:520px}
+.hs-shade{position:absolute;inset:0;background:
+  linear-gradient(90deg,rgba(8,10,14,.86) 0%,rgba(8,10,14,.62) 38%,rgba(8,10,14,.1) 66%,rgba(8,10,14,0) 100%),
+  linear-gradient(180deg,rgba(8,10,14,.55) 0%,rgba(8,10,14,0) 22%),
+  linear-gradient(0deg,rgba(8,10,14,.55) 0%,rgba(8,10,14,0) 25%)}
+.hs-content{position:relative;height:100%;display:flex;flex-direction:column;justify-content:center;padding-top:77px}
+.pill{align-self:flex-start;border:1.5px solid rgba(255,255,255,.75);border-radius:999px;padding:5px 14px;font-family:Montserrat;font-weight:700;font-size:12px;letter-spacing:.12em;margin-bottom:18px}
+.hs h1{font-size:clamp(36px,5.2vw,64px);font-weight:800;max-width:760px;letter-spacing:-.02em}
+.hs h1 span{color:var(--y)}
+.hs p.lead{color:#e8eaee;font-size:18px;margin:18px 0 26px;max-width:520px}
+.feats{display:flex;gap:26px;flex-wrap:wrap;margin-bottom:32px}
+.feat{display:flex;align-items:center;gap:10px;font-weight:600;font-size:14px;line-height:1.25}
+.feat svg{width:34px;height:34px;color:var(--y);flex:none}
 .hs .cta{display:flex;gap:14px;flex-wrap:wrap}
-.hs-stages{position:absolute;left:0;right:0;bottom:28px}
-.hs-stages .wrap{display:flex;gap:10px;flex-wrap:wrap;align-items:center}
-.hs-stage{font-size:13px;font-weight:600;padding:7px 14px;border-radius:999px;border:1px solid rgba(255,255,255,.3);color:rgba(255,255,255,.65);background:rgba(0,0,0,.35);transition:.3s}
-.hs-stage.on{background:var(--yellow);border-color:var(--yellow);color:var(--black)}
-.hs-bar{position:absolute;left:0;bottom:0;height:4px;background:var(--yellow);width:0}
-.hs-hint{position:absolute;right:24px;bottom:30px;font-size:13px;color:#ddd;display:flex;align-items:center;gap:8px;transition:opacity .3s}
-.hs-hint i{width:18px;height:28px;border:2px solid #ddd;border-radius:10px;position:relative}
+.badge{position:absolute;right:max(24px,calc((100vw - 1200px)/2 + 24px));top:132px;text-align:center;color:#fff;width:150px;height:124px}
+.badge svg{position:absolute;inset:0;width:150px;height:124px;color:var(--y)}
+.badge div{position:relative;padding:26px 30px 0;font-family:Montserrat;font-weight:800;line-height:1.1}
+.badge b{display:block;color:var(--y);font-size:26px}
+.badge small{font-size:11px;display:block;line-height:1.25}
+.stages{position:absolute;right:max(24px,calc((100vw - 1200px)/2 + 24px));top:50%;transform:translateY(-40%);display:flex;flex-direction:column;gap:14px;align-items:flex-end}
+.st{display:flex;align-items:center;gap:12px;font-size:13px;font-weight:600;color:rgba(255,255,255,0);transition:.3s;cursor:pointer;background:none;border:0;font-family:inherit;text-shadow:0 1px 6px rgba(0,0,0,.7)}
+.st i{width:10px;height:10px;border-radius:50%;background:rgba(255,255,255,.5);transition:.3s;flex:none}
+.st.on{color:#fff}
+.st.on i{background:var(--y);box-shadow:0 0 0 4px rgba(255,194,14,.3)}
+.st:hover{color:rgba(255,255,255,.85)}
+.hs-bar{position:absolute;left:0;bottom:0;height:4px;background:var(--y);width:0}
+.hs-hint{position:absolute;left:50%;bottom:16px;transform:translateX(-50%);font-size:12px;color:#ddd;display:flex;flex-direction:column;align-items:center;gap:6px;transition:opacity .3s}
+.hs-hint i{width:20px;height:30px;border:2px solid #ddd;border-radius:10px;position:relative}
 .hs-hint i::after{content:"";position:absolute;left:50%;top:5px;width:3px;height:6px;margin-left:-1.5px;background:#ddd;border-radius:2px;animation:hsw 1.4s infinite}
 @keyframes hsw{to{transform:translateY(9px);opacity:0}}
-@media (prefers-reduced-motion:reduce){.hs{height:auto}.hs-sticky{position:relative;height:calc(100svh - 77px)}.hs-hint{display:none}}
+@media (prefers-reduced-motion:reduce){.hs{height:auto}.hs-sticky{position:relative}.hs-hint{display:none}}
 
 /* services */
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:46px}
-.card{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:30px;transition:.25s}
-.card:hover{transform:translateY(-4px);box-shadow:0 14px 40px rgba(0,0,0,.08);border-color:var(--yellow)}
-.ico{width:56px;height:56px;border-radius:12px;background:var(--yellow);display:grid;place-items:center;margin-bottom:18px}
-.ico svg{width:30px;height:30px;stroke:var(--black);fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
-.card h3{font-size:20px;margin-bottom:10px}
-.card p{color:var(--muted);font-size:15px}
-.card ul{margin-top:12px;padding-left:18px;color:var(--muted);font-size:14px}
+.services{padding:70px 0 40px}
+.services .wrap{display:grid;grid-template-columns:290px 1fr;gap:34px;align-items:center}
+.services p{color:var(--mut);margin-top:12px}
+.tiles{display:grid;grid-template-columns:repeat(6,1fr);gap:12px}
+.tile{position:relative;aspect-ratio:3/4;border-radius:12px;overflow:hidden;color:#fff;text-decoration:none;box-shadow:0 6px 18px rgba(0,0,0,.12)}
+.tile img{width:100%;height:100%;object-fit:cover;transition:transform .5s}
+.tile:hover img{transform:scale(1.07)}
+.tile::after{content:"";position:absolute;inset:0;background:linear-gradient(0deg,rgba(10,12,16,.92) 0%,rgba(10,12,16,.25) 45%,rgba(10,12,16,0) 70%)}
+.tile .tc{position:absolute;left:12px;right:10px;bottom:12px;z-index:1}
+.tile .tic{width:36px;height:36px;border-radius:50%;background:var(--y);color:#111;display:grid;place-items:center;margin-bottom:8px}
+.tile .tic svg{width:19px;height:19px}
+.tile h3{font-size:15px;font-weight:700}
+.tile small{display:block;font-size:12px;color:#cfd3d9;margin-top:4px;line-height:1.35;max-height:0;overflow:hidden;transition:max-height .35s}
+.tile:hover small,.tile:focus small{max-height:80px}
 
-/* why */
-.why{background:var(--soft)}
-.why .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
-.checks{list-style:none;margin-top:28px;display:grid;gap:18px}
-.checks li{display:flex;gap:14px}
-.checks li::before{content:"✓";flex:none;width:30px;height:30px;border-radius:50%;background:var(--black);color:var(--yellow);display:grid;place-items:center;font-weight:700}
-.checks b{display:block;color:var(--black)}
-.stat-box{background:var(--black);color:#fff;border-radius:20px;padding:40px;display:grid;grid-template-columns:1fr 1fr;gap:30px}
-.stat-box b{font-family:Montserrat;font-size:40px;color:var(--yellow);display:block}
-.stat-box span{color:#bbb;font-size:14px}
+/* process + avantages */
+.duo{padding:20px 0 50px}
+.duo .wrap{display:grid;grid-template-columns:1.85fr 1fr;gap:18px}
+.dcard{background:var(--card);border-radius:16px;color:#fff;overflow:hidden;position:relative}
+.proc{display:grid;grid-template-columns:230px 1fr}
+.proc>img{width:100%;height:100%;object-fit:cover}
+.proc .in{padding:26px 26px 28px}
+.dcard h3{font-size:21px;margin-bottom:22px}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+.ring{width:56px;height:56px;border-radius:50%;border:2.5px solid var(--y);display:grid;place-items:center;color:var(--y);margin:0 0 12px 22px}
+.ring svg{width:26px;height:26px}
+.step .n{display:flex;gap:8px;align-items:center}
+.step .n b{font-family:Montserrat;font-size:30px;font-weight:800}
+.step .n span{font-size:13px;font-weight:600;line-height:1.25}
+.adv{padding:26px}
+.adv ul{list-style:none;display:grid;gap:12px;position:relative;z-index:1}
+.adv li{display:flex;gap:10px;font-size:14.5px;color:#e5e7eb}
+.adv li svg{width:20px;height:20px;color:var(--y);flex:none;margin-top:1px}
+.adv .house{position:absolute;right:-10px;bottom:-10px;width:190px;color:rgba(255,255,255,.07)}
 
-/* steps */
-.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:22px;margin-top:46px;counter-reset:s}
-.step{padding:28px;border-radius:var(--radius);border:1px solid var(--line);position:relative}
-.step::before{counter-increment:s;content:counter(s,decimal-leading-zero);font-family:Montserrat;font-weight:800;font-size:42px;color:var(--yellow);display:block;margin-bottom:8px}
-.step h3{font-size:18px;margin-bottom:8px}
-.step p{color:var(--muted);font-size:15px}
+/* avant/après */
+.ba-sec{padding:20px 0 60px}
+.ba-head{display:flex;justify-content:space-between;align-items:flex-end;gap:20px;flex-wrap:wrap;margin-bottom:24px}
+.ba-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
+.ba{position:relative;aspect-ratio:16/10;border-radius:12px;overflow:hidden;user-select:none;box-shadow:0 6px 18px rgba(0,0,0,.1);touch-action:pan-y}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;pointer-events:none}
+.ba .after{clip-path:inset(0 0 0 50%)}
+.ba .hand{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;transform:translateX(-50%);pointer-events:none}
+.ba .hand::after{content:"‹ ›";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:40px;height:40px;border-radius:50%;background:#fff;color:#111;display:grid;place-items:center;font-weight:800;font-size:16px;letter-spacing:2px;box-shadow:0 2px 10px rgba(0,0,0,.3)}
+.ba input{position:absolute;inset:0;width:100%;height:100%;opacity:0;cursor:ew-resize;margin:0}
+.ba .lb{position:absolute;bottom:10px;background:rgba(255,255,255,.92);font-size:12px;font-weight:700;padding:4px 10px;border-radius:6px;pointer-events:none}
+.ba .lb.l{left:10px}.ba .lb.r{right:10px}
+.ba-cap{font-family:Montserrat;font-weight:700;margin-top:10px;font-size:16px}
+.ba-cap small{display:block;font-family:Inter;font-weight:400;color:var(--mut);font-size:13px}
+.note{font-size:12.5px;color:var(--mut);margin-top:14px}
 
-/* zone */
-.zone{background:var(--black);color:#fff}
-.zone h2{color:#fff}
-.zone .lead{color:#bbb}
-.towns{display:flex;flex-wrap:wrap;gap:10px;margin-top:30px}
-.towns span{border:1px solid #444;border-radius:999px;padding:8px 16px;font-size:14px;color:#ddd}
+/* engagements band */
+.band{background:linear-gradient(rgba(14,16,20,.9),rgba(14,16,20,.9)),url(images/site/facade.jpg) center/cover;color:#fff;padding:44px 0}
+.band .wrap{display:grid;grid-template-columns:280px 1fr;gap:30px;align-items:center}
+.band h2{font-size:24px}
+.band p{color:var(--mut2);margin-top:6px}
+.eng{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.eng div{background:rgba(255,255,255,.05);border:1px solid rgba(255,255,255,.12);border-radius:12px;padding:18px}
+.eng svg{width:28px;height:28px;color:var(--y);margin-bottom:8px}
+.eng b{display:block;font-family:Montserrat;font-size:15px;margin-bottom:4px}
+.eng span{font-size:13.5px;color:#c9ced6}
 
-/* contact */
-.contact .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:50px}
-.info{display:grid;gap:18px;margin-top:30px}
-.info a,.info div{display:flex;gap:14px;align-items:flex-start;text-decoration:none}
-.info .i{flex:none;width:46px;height:46px;border-radius:10px;background:var(--soft);display:grid;place-items:center}
-.info .i svg{width:22px;height:22px;stroke:var(--black);fill:none;stroke-width:2}
-.info small{display:block;color:var(--muted);font-size:13px}
-.info strong{font-size:17px;color:var(--black)}
-form{background:var(--soft);padding:34px;border-radius:20px;display:grid;gap:16px}
-.row{display:grid;grid-template-columns:1fr 1fr;gap:16px}
-label{font-size:14px;font-weight:600;display:grid;gap:6px}
-input,select,textarea{font:inherit;padding:13px 14px;border:1px solid var(--line);border-radius:10px;background:#fff;width:100%}
-input:focus,select:focus,textarea:focus{outline:2px solid var(--yellow);border-color:var(--yellow)}
-textarea{min-height:130px;resize:vertical}
-form .btn{justify-content:center;border:0}
-.note{font-size:13px;color:var(--muted)}
+/* devis */
+.devis{background:var(--ink);color:#fff;position:relative;overflow:hidden}
+.devis .wrap{display:grid;grid-template-columns:1fr 1.25fr .7fr;gap:28px;align-items:center;padding-top:46px;padding-bottom:46px}
+.devis h2{font-size:clamp(26px,3vw,34px)}
+.devis h2 span{color:var(--y)}
+.devis p{color:#cfd3d9;margin:12px 0 20px}
+.dfe{display:flex;gap:20px;flex-wrap:wrap}
+.dfe div{display:flex;gap:9px;align-items:center;font-size:13px;font-weight:600;line-height:1.25}
+.dfe svg{width:28px;height:28px;color:var(--y);flex:none}
+form{background:#fff;color:var(--tx);border-radius:14px;padding:18px;display:grid;gap:10px;box-shadow:0 20px 50px rgba(0,0,0,.35)}
+.fr{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+.fr2{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+form input,form select,form textarea{font:inherit;font-size:14px;padding:11px 12px;border:1px solid #dcdfe4;border-radius:8px;background:#fff;width:100%;color:var(--tx)}
+form textarea{min-height:46px;resize:vertical}
+form input:focus,form select:focus,form textarea:focus{outline:2px solid var(--y);border-color:var(--y)}
+form .btn{justify-content:center;border:0;width:100%}
+form .chk{font-size:12px;color:var(--mut);display:flex;gap:8px;align-items:flex-start}
+form .chk input{width:auto;margin-top:2px}
+.devis .pic{align-self:stretch;border-radius:14px;overflow:hidden;min-height:260px}
+.devis .pic img{width:100%;height:100%;object-fit:cover}
 
 /* footer */
-footer{background:#0d0d0d;color:#aaa;padding:50px 0 30px;font-size:14px}
-.foot{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}
-footer h4{color:#fff;font-family:Montserrat;margin-bottom:14px}
+footer{background:#0f1216;color:#b8bec7;font-size:14px}
+.foot{display:grid;grid-template-columns:1.3fr .8fr .9fr 1.1fr 1.2fr;gap:28px;padding:44px 0 34px}
+footer h4{color:#fff;font-size:15px;margin-bottom:12px}
+footer ul{list-style:none;display:grid;gap:6px}
 footer a{text-decoration:none}
-footer a:hover{color:var(--yellow)}
-.legal{border-top:1px solid #222;margin-top:40px;padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:10px}
-.credit b{color:var(--yellow)}
+footer a:hover{color:var(--y)}
+.fbrand{display:flex;align-items:center;gap:10px;color:#fff;margin-bottom:12px}
+.fbrand img{width:46px;height:46px;border-radius:10px;background:#fff;padding:3px}
+.fbrand b{font-family:Montserrat;font-size:19px;font-weight:800}
+.fc li{display:flex;gap:10px;align-items:flex-start}
+.fc svg{width:18px;height:18px;flex:none;margin-top:2px;color:#fff}
+.map{border-radius:12px;overflow:hidden;height:150px;border:1px solid var(--line);margin-bottom:12px}
+.map iframe{width:100%;height:100%;border:0}
+.fcta{display:flex;gap:12px;align-items:center;background:var(--y);color:#111;border-radius:12px;padding:14px 16px;text-decoration:none}
+.fcta svg{width:26px;height:26px;flex:none}
+.fcta b{display:block;font-family:Montserrat}
+.fcta small{font-size:12px}
+.fcta:hover{color:#111;background:var(--y2)}
+.fbot{border-top:1px solid #222831;padding:16px 0}
+.fbot .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;font-size:13px}
+.trust{display:flex;gap:22px;flex-wrap:wrap}
+.trust span{display:inline-flex;gap:7px;align-items:center}
+.trust svg{width:17px;height:17px;color:#22c55e}
+.flinks a+a::before{content:"|";margin:0 12px;color:#444}
+.credit b{color:var(--y)}
 
-.call-fab{position:fixed;right:18px;bottom:18px;z-index:60;width:60px;height:60px;border-radius:50%;background:var(--yellow);display:none;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.3)}
-.call-fab svg{width:28px;height:28px;stroke:var(--black);fill:none;stroke-width:2}
+.call-fab{position:fixed;right:16px;bottom:16px;z-index:60;width:58px;height:58px;border-radius:50%;background:var(--y);display:none;place-items:center;box-shadow:0 8px 24px rgba(0,0,0,.35);color:#111}
+.call-fab svg{width:26px;height:26px}
 
-@media (max-width:900px){
-  .why .wrap,.contact .wrap,.foot{grid-template-columns:1fr}
-  .grid{grid-template-columns:1fr 1fr}
-  .steps{grid-template-columns:1fr 1fr}
-  .menu{display:none;position:absolute;top:76px;left:0;right:0;background:#fff;flex-direction:column;padding:20px;border-bottom:1px solid var(--line)}
+/* responsive */
+@media (max-width:1180px){
+  .services .wrap{grid-template-columns:1fr}
+  .tiles{grid-template-columns:repeat(3,1fr)}
+  .tile{aspect-ratio:4/3}
+  .tile small{max-height:80px}
+  .duo .wrap{grid-template-columns:1fr}
+  .devis .wrap{grid-template-columns:1fr 1.3fr}
+  .devis .pic{display:none}
+  .foot{grid-template-columns:1fr 1fr 1fr}
+  .menu{gap:18px}
+}
+@media (max-width:980px){
+  .topbar .hide-m{display:none}
+  .menu{display:none;position:absolute;top:76px;left:0;right:0;background:#111418;flex-direction:column;align-items:flex-start;padding:16px 24px 24px;gap:6px;border-bottom:1px solid #222}
   .menu.open{display:flex}
   .burger{display:block}
+  .nav-r .ico-l,.nav-r .btn{display:none}
+  .badge{display:none}
+  .stages{right:auto;left:24px;top:96px;transform:none;flex-direction:row;gap:0}
+  .st{display:none;background:var(--y);color:#111!important;padding:6px 12px;border-radius:999px;font-size:12px;text-shadow:none}
+  .st.on{display:flex}.st i{display:none}
+  .proc{grid-template-columns:1fr}.proc>img{height:150px}
+  .steps{grid-template-columns:1fr 1fr;row-gap:20px}
+  .ba-grid{grid-template-columns:1fr}
+  .band .wrap{grid-template-columns:1fr}
+  .devis .wrap{grid-template-columns:1fr}
   .call-fab{display:grid}
 }
-@media (max-width:600px){
-  .hs-shade{background:linear-gradient(0deg,rgba(10,10,10,.9) 0%,rgba(10,10,10,.6) 55%,rgba(10,10,10,.25) 100%)}
-  .hs-content{justify-content:flex-end}
-  .hs p{font-size:16px;margin:14px 0 22px}
-  .hs-hint{display:none}
-  .hs-stage{display:none}
-  .hs-stage.on{display:inline-block}
-  .hs-stages{bottom:auto;top:18px}
-  .hs .cta .btn-o{display:none}
-  .hs-content{padding-bottom:40px}
-  section{padding:64px 0}
+@media (max-width:640px){
   .wrap{padding:0 16px}
-  .grid,.steps,.row{grid-template-columns:1fr}
-  .stat-box{padding:28px}
-  form{padding:22px}
+  .topbar .right{display:none}
+  .brand b{font-size:18px}.brand img{width:44px;height:44px}
+  .hs-shade{background:linear-gradient(0deg,rgba(8,10,14,.94) 0%,rgba(8,10,14,.7) 50%,rgba(8,10,14,.25) 100%)}
+  .hs-content{justify-content:flex-end;padding-bottom:44px}
+  .hs p.lead{font-size:16px;margin:12px 0 18px}
+  .feats{gap:14px;margin-bottom:22px}.feat{font-size:12.5px}.feat svg{width:26px;height:26px}
+  .hs .cta .btn-o{display:none}
+  .hs-hint{display:none}
+  .stages{left:16px}
+  .tiles{grid-template-columns:1fr 1fr}
+  .tile{aspect-ratio:1/1}
+  .tile small{display:none}
+  .eng{grid-template-columns:1fr}
+  .fr,.fr2{grid-template-columns:1fr}
+  .foot{grid-template-columns:1fr}
 }
 </style>
 </head>
 <body>
 
+<div class="topbar"><div class="wrap">
+  <span><svg class="ic" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg>Mézières-sur-Seine et alentours (78)</span>
+  <div class="right">
+    <span class="hide-m"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>Lun – Sam : 8h – 19h</span>
+    <a class="wa" href="https://wa.me/33647991777" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2zm5.6 14.1c-.2.7-1.4 1.3-2 1.4-.5.1-1.2.1-1.9-.1-.4-.1-1-.3-1.7-.6-3-1.3-4.9-4.3-5.1-4.5-.1-.2-1.2-1.6-1.2-3.1s.8-2.2 1-2.5c.3-.3.6-.4.8-.4h.6c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.1-.3.3-.1.6.2.3.8 1.3 1.6 2.1 1.1 1 2.1 1.3 2.4 1.4.3.2.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.8-.1 1.4z"/></svg>Réponse rapide par WhatsApp</a>
+  </div>
+</div></div>
+
 <header>
   <nav class="wrap nav">
-    <a href="#" class="brand"><img src="logo.jpg" alt="Ciobanu Rénov"></a>
-    <button class="burger" aria-label="Menu" onclick="document.querySelector('.menu').classList.toggle('open')">☰</button>
-    <ul class="menu" onclick="this.classList.remove('open')">
+    <a href="#top" class="brand"><img src="images/site/logo-icon.png" alt=""><b>Ciobanu Rénov</b></a>
+    <ul class="menu" id="menu">
+      <li><a href="#top" class="on">Accueil</a></li>
       <li><a href="#services">Services</a></li>
-      <li><a href="#pourquoi">Pourquoi nous</a></li>
       <li><a href="#methode">Méthode</a></li>
-      <li><a href="#zone">Zone</a></li>
-      <li><a href="#contact" class="btn btn-y">Devis gratuit</a></li>
+      <li><a href="#realisations">Avant / Après</a></li>
+      <li><a href="#engagements">Engagements</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
+    <div class="nav-r">
+      <a class="ico-l" href="https://wa.me/33647991777" target="_blank" rel="noopener" aria-label="WhatsApp"><svg class="ic" viewBox="0 0 24 24"><path d="M3 21l1.6-4.6A9 9 0 1 1 8 19.6z"/><path d="M9 10c0 3 2 5 5 5l1.5-1.5-2-1-1 1c-1 0-2-1-2-2l1-1-1-2z"/></svg></a>
+      <a class="ico-l" href="mailto:ncbatipro@yahoo.com" aria-label="Email"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></a>
+      <a href="#contact" class="btn btn-y"><svg viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg>Devis gratuit</a>
+      <button class="burger" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')"><svg class="ic" viewBox="0 0 24 24"><path d="M3 6h18M3 12h18M3 18h18"/></svg></button>
+    </div>
   </nav>
 </header>
 
@@ -173,212 +288,231 @@ footer a:hover{color:var(--yellow)}
     <canvas id="hs-canvas" aria-hidden="true"></canvas>
     <div class="hs-shade"></div>
     <div class="wrap hs-content">
-      <span class="tag">Artisan du bâtiment · Yvelines (78)</span>
-      <h1>Du terrain à la maison <span>entre de bonnes mains</span></h1>
-      <p>Toiture, charpente, isolation et maçonnerie : Ciobanu Rénov réalise vos travaux avec soin, dans les délais annoncés et au juste prix.</p>
+      <span class="pill">CONSTRUIRE · RÉNOVER · ISOLER</span>
+      <h1>Bâtiment &amp; rénovation<br><span>par un pro</span></h1>
+      <p class="lead">Des travaux fiables, soignés et livrés dans les délais pour votre maison, à Mézières-sur-Seine et dans tout le secteur des Yvelines.</p>
+      <div class="feats">
+        <div class="feat"><svg class="ic" viewBox="0 0 24 24"><path d="M12 2l8 4v6c0 5-3.5 8.5-8 10-4.5-1.5-8-5-8-10V6z"/><path d="M8.5 12l2.5 2.5 4.5-5"/></svg>Travail<br>soigné</div>
+        <div class="feat"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M15 8.5a3.5 3.5 0 1 0 0 7M7 11h6M7 13.5h6"/></svg>Prix<br>justes</div>
+        <div class="feat"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/><path d="M9 16l2 2 4-4"/></svg>Délais<br>respectés</div>
+      </div>
       <div class="cta">
-        <a href="#contact" class="btn btn-y">Demander un devis gratuit</a>
-        <a href="tel:+33647991777" class="btn btn-o">📞 06 47 99 17 77</a>
+        <a href="#contact" class="btn btn-y">Devis gratuit <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
+        <a href="#services" class="btn btn-o"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="9" cy="9" r="2"/><path d="M21 15l-5-5L5 21"/></svg>Nos services</a>
       </div>
     </div>
-    <div class="hs-stages"><div class="wrap">
-      <span class="hs-stage on">Terrain</span>
-      <span class="hs-stage">Maçonnerie</span>
-      <span class="hs-stage">Charpente &amp; toiture</span>
-      <span class="hs-stage">Isolation &amp; façade</span>
-      <span class="hs-stage">Finitions</span>
-    </div></div>
+    <div class="badge" aria-hidden="true">
+      <svg viewBox="0 0 132 110"><g fill="currentColor"><path d="M30 92c-18-10-24-34-14-54l3 2c-9 18-3 40 13 49z"/><ellipse cx="14" cy="50" rx="3.5" ry="7" transform="rotate(-20 14 50)"/><ellipse cx="12" cy="64" rx="3.5" ry="7" transform="rotate(-5 12 64)"/><ellipse cx="16" cy="78" rx="3.5" ry="7" transform="rotate(15 16 78)"/><ellipse cx="25" cy="89" rx="3.5" ry="7" transform="rotate(40 25 89)"/><ellipse cx="20" cy="37" rx="3.5" ry="7" transform="rotate(-35 20 37)"/><path d="M102 92c18-10 24-34 14-54l-3 2c9 18 3 40-13 49z"/><ellipse cx="118" cy="50" rx="3.5" ry="7" transform="rotate(20 118 50)"/><ellipse cx="120" cy="64" rx="3.5" ry="7" transform="rotate(5 120 64)"/><ellipse cx="116" cy="78" rx="3.5" ry="7" transform="rotate(-15 116 78)"/><ellipse cx="107" cy="89" rx="3.5" ry="7" transform="rotate(-40 107 89)"/><ellipse cx="112" cy="37" rx="3.5" ry="7" transform="rotate(35 112 37)"/></g></svg>
+      <div><b>100%</b><small>Devis gratuit<br>sans engagement</small></div>
+    </div>
+    <div class="stages" id="stages">
+      <button class="st on" data-p="0"><span>Terrassement</span><i></i></button>
+      <button class="st" data-p=".14"><span>Fondations</span><i></i></button>
+      <button class="st" data-p=".28"><span>Maçonnerie</span><i></i></button>
+      <button class="st" data-p=".42"><span>Charpente</span><i></i></button>
+      <button class="st" data-p=".55"><span>Toiture</span><i></i></button>
+      <button class="st" data-p=".68"><span>Isolation &amp; façade</span><i></i></button>
+      <button class="st" data-p=".85"><span>Finitions</span><i></i></button>
+    </div>
     <div class="hs-hint"><i></i>Faites défiler</div>
     <div class="hs-bar"></div>
   </div>
 </section>
 
-<section id="services">
+<section class="services" id="services">
   <div class="wrap">
-    <span class="tag">Nos services</span>
-    <h2 class="title">Des travaux de A à Z</h2>
-    <p class="lead">Du montage de l’échafaudage au nettoyage de fin de chantier, nous prenons en charge l’ensemble de votre projet.</p>
-    <div class="grid">
-      <div class="card">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/></svg></div>
-        <h3>Couverture &amp; toiture</h3>
-        <p>Dépose et repose de tuiles, remplacement des tuiles cassées, réparation de fuites, faîtage.</p>
-      </div>
-      <div class="card">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M2 20L12 4l10 16"/><path d="M7 12h10M5 16h14"/></svg></div>
-        <h3>Charpente</h3>
-        <p>Remplacement des chevrons et liteaux endommagés, renforcement et traitement de charpente.</p>
-      </div>
-      <div class="card">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M3 7h18M3 12h18M3 17h18"/><path d="M7 7v10M17 7v10"/></svg></div>
-        <h3>Isolation</h3>
-        <p>Isolation des combles, toiture et murs pour réduire vos factures d’énergie et gagner en confort.</p>
-      </div>
-      <div class="card">
-        <div class="ico"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16"/><path d="M3 9h18M3 14h18M9 4v5M15 9v5M9 14v6"/></svg></div>
-        <h3>Maçonnerie</h3>
-        <p>Reprise de maçonnerie, jonctions de toiture, rives, solins, petits ouvrages et réparations.</p>
-      </div>
-      <div class="card">
-        <div class="ico"><svg viewBox="0 0 24 24"><path d="M14 4l6 6-9 9H5v-6z"/><path d="M12 6l6 6"/></svg></div>
-        <h3>Rénovation</h3>
-        <p>Rénovation intérieure et extérieure : remise en état, finitions, amélioration de votre habitat.</p>
-      </div>
-      <div class="card">
-        <div class="ico"><svg viewBox="0 0 24 24"><rect x="2" y="8" width="13" height="9"/><path d="M15 11h4l3 3v3h-7"/><circle cx="6" cy="18" r="2"/><circle cx="18" cy="18" r="2"/></svg></div>
-        <h3>Échafaudage &amp; gravats</h3>
-        <p>Installation d’échafaudage, enlèvement des gravats et évacuation en déchetterie.</p>
-      </div>
+    <div>
+      <span class="tag">Nos services</span>
+      <h2 class="h2">Tout pour construire, rénover et isoler</h2>
+      <p>Du terrassement aux finitions : nous réalisons votre projet de A à Z, avec un seul interlocuteur.</p>
+      <span class="uline"></span>
+    </div>
+    <div class="tiles">
+      <a class="tile" href="#contact"><img src="images/site/terrassement.jpg" alt="Terrassement" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="12" width="12" height="6" rx="1"/><path d="M14 14h3l3-6M6 12V8h5l2 4"/><circle cx="5" cy="19" r="1.5"/><circle cx="11" cy="19" r="1.5"/></svg></span><h3>Terrassement</h3><small>Préparation du terrain, évacuation des gravats en déchetterie.</small></div></a>
+      <a class="tile" href="#contact"><img src="images/site/maconnerie.jpg" alt="Maçonnerie" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16"/><path d="M3 9h18M3 14h18M9 4v5M15 9v5M9 14v6"/></svg></span><h3>Maçonnerie</h3><small>Murs, reprises de maçonnerie, jonctions, rives et solins.</small></div></a>
+      <a class="tile" href="#contact"><img src="images/site/charpente.jpg" alt="Charpente" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M2 20L12 4l10 16"/><path d="M7 12h10M5 16h14M12 4v16"/></svg></span><h3>Charpente</h3><small>Remplacement des chevrons et liteaux, renforcement.</small></div></a>
+      <a class="tile" href="#contact"><img src="images/site/toiture.jpg" alt="Toiture" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></span><h3>Toiture</h3><small>Dépose et repose de tuiles, réparation de fuites, faîtage.</small></div></a>
+      <a class="tile" href="#contact"><img src="images/site/facade.jpg" alt="Isolation et façade" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></span><h3>Isolation &amp; façade</h3><small>Isolation des combles, murs et façade pour plus de confort.</small></div></a>
+      <a class="tile" href="#contact"><img src="images/site/renovation.jpg" alt="Rénovation et finitions" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M14 4l6 6-9 9H5v-6z"/><path d="M12 6l6 6"/></svg></span><h3>Rénovation</h3><small>Remise en état et finitions intérieures et extérieures.</small></div></a>
     </div>
   </div>
 </section>
 
-<section class="why" id="pourquoi">
+<section class="duo" id="methode">
   <div class="wrap">
-    <div>
-      <span class="tag">Pourquoi nous choisir</span>
-      <h2 class="title">Un artisan, un interlocuteur unique</h2>
-      <p class="lead">Vous traitez directement avec le professionnel qui réalise vos travaux. Pas d’intermédiaire, pas de surprise.</p>
-      <ul class="checks">
-        <li><div><b>Devis clair et détaillé</b>Chaque poste est chiffré : vous savez exactement ce que vous payez.</div></li>
-        <li><div><b>Planning annoncé</b>Date de début, durée estimée et date de fin indiquées dès le devis.</div></li>
-        <li><div><b>Matériaux de qualité</b>Fournitures adaptées à votre toiture et à votre budget.</div></li>
-        <li><div><b>Chantier propre</b>Nettoyage de fin de chantier et évacuation des déchets inclus.</div></li>
+    <div class="dcard proc">
+      <img src="images/site/process.jpg" alt="" loading="lazy">
+      <div class="in">
+        <h3>Comment se déroule votre projet</h3>
+        <div class="steps">
+          <div class="step"><div class="ring"><svg class="ic" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z"/><path d="M8 10h8M8 14h5"/></svg></div><div class="n"><b>1</b><span>Contact<br>&amp; visite</span></div></div>
+          <div class="step"><div class="ring"><svg class="ic" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M8 13h8M8 17h5"/></svg></div><div class="n"><b>2</b><span>Devis<br>détaillé</span></div></div>
+          <div class="step"><div class="ring"><svg class="ic" viewBox="0 0 24 24"><path d="M14.7 6.3a4 4 0 0 0-5.4 5.4L3 18l3 3 6.3-6.3a4 4 0 0 0 5.4-5.4l-2.5 2.5-2.4-.6-.6-2.4z"/></svg></div><div class="n"><b>3</b><span>Réalisation<br>des travaux</span></div></div>
+          <div class="step"><div class="ring"><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg></div><div class="n"><b>4</b><span>Réception<br>&amp; nettoyage</span></div></div>
+        </div>
+      </div>
+    </div>
+    <div class="dcard adv">
+      <h3>Vos avantages avec Ciobanu Rénov</h3>
+      <ul>
+        <li><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Un seul interlocuteur pour tous les travaux</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Devis clair, chaque poste chiffré</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Date de début et durée annoncées</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Chantier propre, gravats évacués</li>
+        <li><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Artisan local : Yvelines (78)</li>
       </ul>
-    </div>
-    <div class="stat-box">
-      <div><b>100%</b><span>des devis gratuits et sans engagement</span></div>
-      <div><b>78</b><span>intervention dans les Yvelines et alentours</span></div>
-      <div><b>1</b><span>seul interlocuteur du devis à la livraison</span></div>
-      <div><b>6</b><span>domaines d’intervention : toiture, charpente, isolation…</span></div>
+      <svg class="house ic" viewBox="0 0 100 80" stroke-width="1.2"><path d="M5 40L50 8l45 32M15 33v45h70V33M35 78V55h15v23M60 45h15v12H60zM22 45h8v8h-8zM70 10v12M78 10v18"/></svg>
     </div>
   </div>
 </section>
 
-<section id="methode">
+<section class="ba-sec" id="realisations">
   <div class="wrap">
-    <span class="tag">Notre méthode</span>
-    <h2 class="title">Comment ça se passe ?</h2>
-    <div class="steps">
-      <div class="step"><h3>Prise de contact</h3><p>Appelez-nous ou remplissez le formulaire en décrivant votre projet.</p></div>
-      <div class="step"><h3>Visite &amp; diagnostic</h3><p>Nous venons constater l’état de votre toiture ou de votre bâtiment.</p></div>
-      <div class="step"><h3>Devis détaillé</h3><p>Vous recevez un devis clair avec prix, planning et conditions.</p></div>
-      <div class="step"><h3>Réalisation</h3><p>Travaux réalisés dans les délais, puis nettoyage complet du chantier.</p></div>
+    <div class="ba-head">
+      <div><span class="tag">Avant / Après</span><h2 class="h2">Chaque étape d’un chantier maîtrisée</h2></div>
+      <a href="#contact" class="btn btn-d">Parler de votre projet <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
+    <div class="ba-grid">
+      <div><div class="ba"><img src="images/site/av1.jpg" alt="Terrain avant travaux" loading="lazy"><img class="after" src="images/site/ap1.jpg" alt="Murs en maçonnerie" loading="lazy"><div class="hand"></div><input type="range" min="0" max="100" value="50" aria-label="Comparer avant et après"><span class="lb l">Avant</span><span class="lb r">Après</span></div><div class="ba-cap">Gros œuvre<small>Du terrain nu aux murs montés</small></div></div>
+      <div><div class="ba"><img src="images/site/av2.jpg" alt="Murs sans toiture" loading="lazy"><img class="after" src="images/site/ap2.jpg" alt="Toiture posée" loading="lazy"><div class="hand"></div><input type="range" min="0" max="100" value="50" aria-label="Comparer avant et après"><span class="lb l">Avant</span><span class="lb r">Après</span></div><div class="ba-cap">Charpente &amp; toiture<small>Charpente, couverture et début de façade</small></div></div>
+      <div><div class="ba"><img src="images/site/av3.jpg" alt="Maison en brique sous échafaudage" loading="lazy"><img class="after" src="images/site/ap3.jpg" alt="Maison terminée" loading="lazy"><div class="hand"></div><input type="range" min="0" max="100" value="50" aria-label="Comparer avant et après"><span class="lb l">Avant</span><span class="lb r">Après</span></div><div class="ba-cap">Façade &amp; finitions<small>Isolation, enduit et aménagements extérieurs</small></div></div>
+    </div>
+    <p class="note">Images d’illustration. Faites glisser pour comparer.</p>
   </div>
 </section>
 
-<section class="zone" id="zone">
+<section class="band" id="engagements">
   <div class="wrap">
-    <span class="tag">Zone d’intervention</span>
-    <h2 class="title">Basés à Mézières-sur-Seine</h2>
-    <p class="lead">Nous intervenons dans les Yvelines (78) et les communes voisines.</p>
-    <div class="towns">
-      <span>Mézières-sur-Seine</span><span>Épône</span><span>Mantes-la-Jolie</span><span>Mantes-la-Ville</span>
-      <span>Aubergenville</span><span>Guerville</span><span>Rosny-sur-Seine</span><span>Les Mureaux</span>
-      <span>Flins-sur-Seine</span><span>Limay</span><span>Buchelay</span><span>Magnanville</span>
-      <span>Meulan-en-Yvelines</span><span>Houdan</span><span>Septeuil</span><span>Et alentours…</span>
+    <div><h2>Nos engagements</h2><p>Ce que vous pouvez attendre de nous, sur chaque chantier.</p></div>
+    <div class="eng">
+      <div><svg class="ic" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6M9 15l2 2 4-4"/></svg><b>Transparence</b><span>Un devis détaillé poste par poste, sans frais cachés.</span></div>
+      <div><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="18" rx="2"/><path d="M16 2v4M8 2v4M3 10h18"/></svg><b>Ponctualité</b><span>Début des travaux, durée et date de fin annoncés à l’avance.</span></div>
+      <div><svg class="ic" viewBox="0 0 24 24"><path d="M3 6h18M8 6V4h8v2M6 6l1 14h10l1-14"/></svg><b>Propreté</b><span>Nettoyage de fin de chantier et évacuation des déchets.</span></div>
     </div>
   </div>
 </section>
 
-<section class="contact" id="contact">
+<section class="devis" id="contact">
   <div class="wrap">
     <div>
-      <span class="tag">Contact</span>
-      <h2 class="title">Demandez votre devis gratuit</h2>
-      <p class="lead">Décrivez votre projet, nous vous rappelons rapidement.</p>
-      <div class="info">
-        <a href="tel:+33647991777"><span class="i"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></span><span><small>Téléphone</small><strong>06 47 99 17 77</strong></span></a>
-        <a href="mailto:ncbatipro@yahoo.com"><span class="i"><svg viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg></span><span><small>Email</small><strong>ncbatipro@yahoo.com</strong></span></a>
-        <div><span class="i"><svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg></span><span><small>Adresse</small><strong>30 rue de la Vallée, Porte 15<br>78970 Mézières-sur-Seine</strong></span></div>
-        <div><span class="i"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg></span><span><small>Horaires</small><strong>Lun – Sam : 8h – 19h</strong></span></div>
+      <h2><span>Devis gratuit</span> : parlez-nous de votre projet</h2>
+      <p>Construction, rénovation ou réparation ? Décrivez vos travaux, nous vous recontactons pour une visite et un devis sans engagement.</p>
+      <div class="dfe">
+        <div><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Réponse<br>rapide</div>
+        <div><svg class="ic" viewBox="0 0 24 24"><path d="M21 12a8 8 0 0 1-11.6 7.1L4 20l1-4.4A8 8 0 1 1 21 12z"/></svg>Conseils<br>gratuits</div>
+        <div><svg class="ic" viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"/><path d="M14 2v6h6"/></svg>Devis<br>gratuit</div>
       </div>
     </div>
     <form id="devis">
-      <div class="row">
-        <label>Nom *<input name="nom" required></label>
-        <label>Téléphone *<input name="tel" type="tel" required></label>
+      <div class="fr">
+        <input name="nom" placeholder="Votre nom *" required>
+        <input name="email" type="email" placeholder="Email">
+        <input name="tel" type="tel" placeholder="Téléphone *" required>
       </div>
-      <div class="row">
-        <label>Email<input name="email" type="email"></label>
-        <label>Ville<input name="ville"></label>
-      </div>
-      <label>Type de travaux
-        <select name="type">
-          <option>Toiture / couverture</option><option>Charpente</option><option>Isolation</option>
-          <option>Maçonnerie</option><option>Rénovation</option><option>Autre</option>
+      <div class="fr2">
+        <select name="type" aria-label="Type de travaux">
+          <option>Maçonnerie</option><option>Charpente</option><option>Toiture</option>
+          <option>Isolation / façade</option><option>Rénovation</option><option>Terrassement</option><option>Autre</option>
         </select>
-      </label>
-      <label>Votre projet *<textarea name="message" required placeholder="Décrivez vos travaux (surface, état actuel, délai souhaité…)"></textarea></label>
-      <button class="btn btn-y" type="submit">Envoyer ma demande</button>
-      <p class="note">Le formulaire ouvre votre messagerie avec la demande pré-remplie. Vous pouvez aussi nous appeler directement.</p>
+        <textarea name="message" placeholder="Votre projet (facultatif)"></textarea>
+      </div>
+      <button class="btn btn-y" type="submit"><svg viewBox="0 0 24 24"><path d="M22 2L11 13M22 2l-7 20-4-9-9-4z"/></svg>Demander mon devis gratuit</button>
+      <label class="chk"><input type="checkbox" required><span>J’accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href="mentions-legales.html#confidentialite">politique de confidentialité</a>.</span></label>
     </form>
+    <div class="pic"><img src="images/site/devis.jpg" alt="" loading="lazy"></div>
   </div>
 </section>
 
 <footer>
-  <div class="wrap">
-    <div class="foot">
-      <div>
-        <h4>Ciobanu Rénov</h4>
-        <p>Artisan du bâtiment : toiture, charpente, isolation, maçonnerie et rénovation dans les Yvelines.</p>
-      </div>
-      <div>
-        <h4>Contact</h4>
-        <p><a href="tel:+33647991777">06 47 99 17 77</a><br><a href="mailto:ncbatipro@yahoo.com">ncbatipro@yahoo.com</a><br>30 rue de la Vallée, Porte 15<br>78970 Mézières-sur-Seine</p>
-      </div>
-      <div>
-        <h4>Navigation</h4>
-        <p><a href="#services">Services</a><br><a href="#methode">Méthode</a><br><a href="#zone">Zone d’intervention</a><br><a href="#contact">Devis gratuit</a></p>
-      </div>
+  <div class="wrap foot">
+    <div>
+      <div class="fbrand"><img src="images/site/logo-icon.png" alt=""><b>Ciobanu Rénov</b></div>
+      <p>Votre artisan pour la construction, la rénovation et l’isolation à Mézières-sur-Seine et dans les Yvelines.</p>
     </div>
-    <div class="legal">
-      <span>© <span id="y"></span> Ciobanu Rénov – Tous droits réservés · <a href="mentions-legales.html">Mentions légales</a> · <a href="mentions-legales.html#confidentialite">Politique de confidentialité</a></span>
-      <span class="credit">Site créé par <a href="https://www.mitcodigital.de" target="_blank" rel="noopener"><b>Mitko Digital Production</b></a></span>
+    <div>
+      <h4>Accès rapide</h4>
+      <ul><li><a href="#top">Accueil</a></li><li><a href="#services">Services</a></li><li><a href="#methode">Méthode</a></li><li><a href="#realisations">Avant / Après</a></li><li><a href="#contact">Contact</a></li></ul>
+    </div>
+    <div>
+      <h4>Nos services</h4>
+      <ul><li>Terrassement</li><li>Maçonnerie</li><li>Charpente</li><li>Toiture</li><li>Isolation &amp; façade</li><li>Rénovation</li></ul>
+    </div>
+    <div>
+      <h4>Contact</h4>
+      <ul class="fc">
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+33647991777">06 47 99 17 77</a></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg><a href="mailto:ncbatipro@yahoo.com">ncbatipro@yahoo.com</a></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M3 21l1.6-4.6A9 9 0 1 1 8 19.6z"/></svg><a href="https://wa.me/33647991777" target="_blank" rel="noopener">Écrire sur WhatsApp</a></li>
+        <li><svg class="ic" viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13S3 17 3 10a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><span>30 rue de la Vallée, Porte 15<br>78970 Mézières-sur-Seine</span></li>
+      </ul>
+    </div>
+    <div>
+      <div class="map"><iframe title="Carte Mézières-sur-Seine" loading="lazy" src="https://www.openstreetmap.org/export/embed.html?bbox=1.735%2C48.940%2C1.845%2C48.985&amp;layer=mapnik&amp;marker=48.9617%2C1.7900"></iframe></div>
+      <a class="fcta" href="#contact"><svg class="ic" viewBox="0 0 24 24"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 8h8M8 12h8M8 16h5"/></svg><span><b>Devis gratuit</b><small>Réponse rapide, sans engagement</small></span></a>
     </div>
   </div>
+  <div class="fbot"><div class="wrap">
+    <span>© <span id="y"></span> Ciobanu Rénov. Tous droits réservés.</span>
+    <span class="trust">
+      <span><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Conforme RGPD</span>
+      <span><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Site sécurisé (HTTPS)</span>
+      <span><svg class="ic" viewBox="0 0 24 24"><circle cx="12" cy="12" r="9"/><path d="M8 12l3 3 5-6"/></svg>Artisan local (78)</span>
+    </span>
+    <span class="flinks"><a href="mentions-legales.html">Mentions légales</a><a href="mentions-legales.html#confidentialite">Confidentialité</a></span>
+  </div></div>
+  <div class="fbot"><div class="wrap" style="justify-content:center">
+    <span class="credit">Site créé par <a href="https://www.mitcodigital.de" target="_blank" rel="noopener"><b>Mitko Digital Production</b></a></span>
+  </div></div>
 </footer>
 
-<a class="call-fab" href="tel:+33647991777" aria-label="Appeler"><svg viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
+<a class="call-fab" href="tel:+33647991777" aria-label="Appeler"><svg class="ic" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg></a>
 
 <script>
 (function(){
-  var N=120, sec=document.querySelector('.hs'), cv=document.getElementById('hs-canvas'), cx=cv.getContext('2d');
-  var bar=document.querySelector('.hs-bar'), hint=document.querySelector('.hs-hint'), stages=document.querySelectorAll('.hs-stage');
-  var cuts=[0,.2,.42,.62,.82];
+  var N=120, FRAMES='images/hero/';
+  var sec=document.querySelector('.hs'), cv=document.getElementById('hs-canvas'), cx=cv.getContext('2d');
+  var bar=document.querySelector('.hs-bar'), hint=document.querySelector('.hs-hint'), st=[].slice.call(document.querySelectorAll('.st'));
+  var cuts=st.map(function(b){return +b.dataset.p});
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   var imgs=new Array(N), cur=-1, want=0, ticking=false;
-  function src(i){return 'images/hero/frame_'+String(i+1).padStart(3,'0')+'.jpg'}
+  function src(i){return FRAMES+'frame_'+String(i+1).padStart(3,'0')+'.jpg'}
   function load(i){if(imgs[i])return;var im=new Image();im.decoding='async';im.onload=function(){if(Math.abs(i-want)<3||cur<0)draw(true)};im.src=src(i);imgs[i]=im}
-  function size(){var r=window.devicePixelRatio||1;cv.width=cv.clientWidth*r;cv.height=cv.clientHeight*r;draw(true)}
+  function size(){var r=Math.min(window.devicePixelRatio||1,2);cv.width=cv.clientWidth*r;cv.height=cv.clientHeight*r;cx.imageSmoothingQuality='high';draw(true)}
   function nearest(i){for(var d=0;d<N;d++){var a=imgs[i-d],b=imgs[i+d];if(a&&a.complete&&a.naturalWidth)return a;if(b&&b.complete&&b.naturalWidth)return b}}
   function draw(force){
     if(!force&&want===cur)return;
     var im=nearest(want);if(!im)return;cur=want;
     var W=cv.width,H=cv.height,s=Math.max(W/im.naturalWidth,H/im.naturalHeight),w=im.naturalWidth*s,h=im.naturalHeight*s;
-    cx.drawImage(im,(W-w)/2,(H-h)/2,w,h);
+    var ox=(W-w)/2; if(W<H) ox=(W-w)*0.62;
+    cx.drawImage(im,ox,(H-h)/2,w,h);
   }
+  function total(){return sec.offsetHeight-cv.clientHeight}
   function update(){
     ticking=false;
-    var r=sec.getBoundingClientRect(), total=sec.offsetHeight-cv.clientHeight;
-    var p=reduce?1:Math.min(1,Math.max(0,-r.top/Math.max(1,total)));
+    var r=sec.getBoundingClientRect();
+    var p=reduce?1:Math.min(1,Math.max(0,-r.top/Math.max(1,total())));
     want=Math.round(p*(N-1));draw();
     bar.style.width=(p*100)+'%';
     hint.style.opacity=p>.03?0:1;
-    var k=0;for(var j=0;j<cuts.length;j++)if(p>=cuts[j])k=j;
-    stages.forEach(function(el,j){el.classList.toggle('on',j===k)});
+    var k=0;for(var j=0;j<cuts.length;j++)if(p>=cuts[j]-0.001)k=j;
+    st.forEach(function(el,j){el.classList.toggle('on',j===k)});
   }
+  st.forEach(function(b){b.addEventListener('click',function(){scrollTo({top:sec.offsetTop+total()*(+b.dataset.p+.02),behavior:'smooth'})})});
   addEventListener('scroll',function(){if(!ticking){ticking=true;requestAnimationFrame(update)}},{passive:true});
   addEventListener('resize',function(){size();update()});
-  if(reduce){load(N-1);want=N-1}else{load(0);for(var i=1;i<N;i++)(function(i){setTimeout(function(){load(i)},i*15)})(i)}
+  if(reduce){load(N-1);want=N-1}else{load(0);for(var i=1;i<N;i++)(function(i){setTimeout(function(){load(i)},i*20)})(i)}
   size();update();
 })();
+document.querySelectorAll('.ba').forEach(function(b){
+  var inp=b.querySelector('input'),a=b.querySelector('.after'),h=b.querySelector('.hand');
+  inp.addEventListener('input',function(){a.style.clipPath='inset(0 0 0 '+inp.value+'%)';h.style.left=inp.value+'%'});
+});
+document.querySelectorAll('#menu a').forEach(function(a){a.addEventListener('click',function(){document.getElementById('menu').classList.remove('open')})});
 document.getElementById('y').textContent=new Date().getFullYear();
 document.getElementById('devis').addEventListener('submit',function(e){
   e.preventDefault();
   var f=new FormData(this);
-  var body='Nom : '+f.get('nom')+'\nTéléphone : '+f.get('tel')+'\nEmail : '+f.get('email')+'\nVille : '+f.get('ville')+'\nTravaux : '+f.get('type')+'\n\n'+f.get('message');
+  var body='Nom : '+f.get('nom')+'\nTéléphone : '+f.get('tel')+'\nEmail : '+f.get('email')+'\nTravaux : '+f.get('type')+'\n\n'+(f.get('message')||'');
   location.href='mailto:ncbatipro@yahoo.com?subject='+encodeURIComponent('Demande de devis – '+f.get('type'))+'&body='+encodeURIComponent(body);
 });
 </script>
