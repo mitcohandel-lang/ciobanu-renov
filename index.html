@@ -259,7 +259,12 @@ footer a:hover{color:var(--y)}
   .topbar .right{display:none}
   .brand b{font-size:18px}.brand img{width:44px;height:44px}
   .hs-shade{background:linear-gradient(0deg,rgba(8,10,14,.94) 0%,rgba(8,10,14,.7) 50%,rgba(8,10,14,.25) 100%)}
-  .hs-content{justify-content:flex-end;padding-bottom:44px}
+  .hs.mob canvas{height:54%;top:77px}
+  .hs.mob .hs-shade{background:linear-gradient(180deg,rgba(8,10,14,.5) 0,rgba(8,10,14,0) 140px,rgba(8,10,14,0) calc(77px + 40%),var(--ink) calc(77px + 54%))}
+  .hs-content{justify-content:flex-end;padding-bottom:28px}
+  .hs.mob .hs-content{padding-bottom:24px}
+  .hs.mob h1{font-size:32px}
+  .hs.mob .pill{margin-bottom:12px;font-size:11px}
   .hs p.lead{font-size:16px;margin:12px 0 18px}
   .feats{gap:14px;margin-bottom:22px}.feat{font-size:12.5px}.feat svg{width:26px;height:26px}
   .hs .cta .btn-o{display:none}
@@ -492,7 +497,8 @@ footer a:hover{color:var(--y)}
 
 <script>
 (function(){
-  var N=120, PORTRAIT=innerWidth/innerHeight<0.9, FRAMES=PORTRAIT?'images/hero/m/':'images/hero/hd/';
+  var N=120, PORTRAIT=innerWidth/innerHeight<0.9, MOB=PORTRAIT&&innerWidth<=700, FRAMES=PORTRAIT?'images/hero/m/':'images/hero/hd/';
+  if(MOB)document.querySelector('.hs').classList.add('mob');
   var sec=document.querySelector('.hs'), cv=document.getElementById('hs-canvas'), cx=cv.getContext('2d');
   var bar=document.querySelector('.hs-bar'), hint=document.querySelector('.hs-hint'), st=[].slice.call(document.querySelectorAll('.st'));
   var cuts=st.map(function(b){return +b.dataset.p});
@@ -506,8 +512,16 @@ footer a:hover{color:var(--y)}
     if(!force&&want===cur)return;
     var im=nearest(want);if(!im)return;cur=want;
     var W=cv.width,H=cv.height,s=Math.max(W/im.naturalWidth,H/im.naturalHeight),w=im.naturalWidth*s,h=im.naturalHeight*s;
-    var ox=(W-w)/2; if(!PORTRAIT&&W<H) ox=(W-w)*0.62;
-    cx.drawImage(im,ox,(H-h)/2,w,h);
+    cx.clearRect(0,0,W,H);
+    var ox=(W-w)/2, oy=(H-h)/2;
+    function cl(v,min){return Math.min(0,Math.max(min,v))}
+    if(!PORTRAIT){ // desktop: house on the right, text on the left
+      ox=Math.max(W-w,0.76*W-0.635*w);
+      if(ox>0){cx.save();cx.translate(ox,0);cx.scale(-1,1);cx.drawImage(im,0,oy,w,h);cx.restore()} // mirrored fill on the left, under the text
+    }else{ // phone: house centred in the top area
+      ox=cl(0.5*W-0.66*w,W-w); oy=cl(0.52*H-0.56*h,H-h);
+    }
+    cx.drawImage(im,ox,oy,w,h);
   }
   function total(){return sec.offsetHeight-cv.clientHeight}
   function update(){
