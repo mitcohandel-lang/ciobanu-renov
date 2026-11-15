@@ -29,8 +29,8 @@
 <link rel="icon" type="image/png" sizes="32x32" href="images/seo/favicon-32.png">
 <link rel="apple-touch-icon" href="images/seo/apple-touch-icon.png">
 <link rel="manifest" href="site.webmanifest">
-<link rel="preload" as="image" href="images/hero/hd/frame_001.jpg" media="(min-aspect-ratio: 9/10)">
-<link rel="preload" as="image" href="images/hero/m/frame_001.jpg" media="(max-aspect-ratio: 9/10)">
+<link rel="preload" as="image" href="images/hero/hd/frame_001.webp" media="(min-aspect-ratio: 9/10)">
+<link rel="preload" as="image" href="images/hero/m/frame_001.webp" media="(max-aspect-ratio: 9/10)">
 <script src="config.js"></script>
 <script>
 (function(){if(!SITE.umami)return;var sc=document.createElement('script');sc.defer=1;sc.src='https://cloud.umami.is/script.js';sc.dataset.websiteId=SITE.umami;document.head.appendChild(sc)})();
@@ -63,7 +63,7 @@ img{max-width:100%;display:block}
 .btn-o:hover{background:#fff;color:#111}
 .btn-d{border-color:var(--y);color:#111;background:#fff;padding:9px 18px;font-size:14px;border-radius:999px}
 .btn-d:hover{background:var(--y)}
-.tag{display:inline-block;font-family:Montserrat;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#9A6700;margin-bottom:8px}
+.tag{display:inline-block;font-family:Montserrat;font-weight:700;font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#7F5500;margin-bottom:8px}
 .h2{font-size:clamp(26px,3.2vw,36px);color:#111}
 .uline{display:block;width:56px;height:4px;border-radius:4px;background:var(--y);margin-top:18px}
 .ic{stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
@@ -198,7 +198,7 @@ header{position:sticky;top:0;z-index:50;background:rgba(14,16,20,.78);backdrop-f
 .note{font-size:12.5px;color:var(--mut);margin-top:14px}
 
 /* engagements band */
-.band{background:linear-gradient(rgba(14,16,20,.9),rgba(14,16,20,.9)),url(images/site/facade.jpg) center/cover;color:#fff;padding:44px 0}
+.band{background:linear-gradient(rgba(14,16,20,.9),rgba(14,16,20,.9)),url(images/site/facade.webp) center/cover;color:#fff;padding:44px 0}
 .band .wrap{display:grid;grid-template-columns:280px 1fr;gap:30px;align-items:center}
 .band h2{font-size:24px}
 .band p{color:var(--mut2);margin-top:6px}
@@ -256,7 +256,7 @@ form input.bad,form textarea.bad{border-color:#ef4444}
 /* footer */
 footer{background:#0f1216;color:#b8bec7;font-size:14px}
 .foot{display:grid;grid-template-columns:1.3fr .8fr .9fr 1.1fr 1.2fr;gap:28px;padding:44px 0 34px}
-footer h4{color:#fff;font-size:15px;margin-bottom:12px}
+footer h3{color:#fff;font-size:15px;margin-bottom:12px}
 footer ul{list-style:none;display:grid;gap:6px}
 footer a{text-decoration:none}
 footer a:hover{color:var(--y)}
@@ -351,7 +351,7 @@ footer a:hover{color:var(--y)}
 
 <header>
   <nav class="wrap nav">
-    <a href="#top" class="brand"><img src="images/site/logo-icon.png" alt="Logo Ciobanu Rénov" width="50" height="50"><b>Ciobanu Rénov</b></a>
+    <a href="#top" class="brand"><img src="images/site/logo-icon.webp" alt="Logo Ciobanu Rénov" width="50" height="50"><b>Ciobanu Rénov</b></a>
     <ul class="menu" id="menu">
       <li><a href="#top" class="on">Accueil</a></li>
       <li><a href="#services">Services</a></li>
@@ -415,12 +415,12 @@ footer a:hover{color:var(--y)}
       <span class="uline"></span>
     </div>
     <div class="tiles">
-      <a class="tile" href="#realisations"><img src="images/site/tile-fondations.jpg" alt="Terrassement et fondations dans les Yvelines" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="12" width="12" height="6" rx="1"/><path d="M14 14h3l3-6M6 12V8h5l2 4"/><circle cx="5" cy="19" r="1.5"/><circle cx="11" cy="19" r="1.5"/></svg></span><h3>Terrassement</h3><small>Fouilles, fondations, évacuation des terres et gravats.</small></div></a>
-      <a class="tile" href="#realisations"><img src="images/site/tile-dalle-beton.jpg" alt="Coulage d’une dalle en béton armé par Ciobanu Rénov" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16"/><path d="M3 9h18M3 14h18M9 4v5M15 9v5M9 14v6"/></svg></span><h3>Maçonnerie &amp; béton</h3><small>Dalles en béton armé, murs, reprises de maçonnerie.</small></div></a>
-      <a class="tile" href="#realisations"><img src="images/site/toiture.jpg" alt="Toiture" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></span><h3>Charpente &amp; toiture</h3><small>Chevrons, liteaux, dépose et repose de tuiles.</small></div></a>
-      <a class="tile" href="#realisations"><img src="images/site/facade.jpg" alt="Isolation et façade" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></span><h3>Isolation &amp; façade</h3><small>Isolation des combles, murs et façade.</small></div></a>
-      <a class="tile" href="#realisations"><img src="images/site/tile-pavage.jpg" alt="Allée pavée réalisée par Ciobanu Rénov" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M3 8h8v5H3zM13 8h8v5h-8zM3 15h5v5H3zM10 15h11v5H10zM3 3h12v3H3zM17 3h4v3h-4z"/></svg></span><h3>Pavage &amp; terrasses</h3><small>Allées pavées, terrasses en bois, aménagements extérieurs.</small></div></a>
-      <a class="tile" href="#realisations"><img src="images/site/tile-salle-de-bain.jpg" alt="Salle de bain rénovée par Ciobanu Rénov" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M14 4l6 6-9 9H5v-6z"/><path d="M12 6l6 6"/></svg></span><h3>Salles de bain &amp; intérieur</h3><small>Salles de bain, carrelage, parquet, peinture et placards.</small></div></a>
+      <a class="tile" href="travaux/terrassement-fondations.html"><img src="images/site/tile-fondations.webp" alt="Terrassement et fondations dans les Yvelines" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="12" width="12" height="6" rx="1"/><path d="M14 14h3l3-6M6 12V8h5l2 4"/><circle cx="5" cy="19" r="1.5"/><circle cx="11" cy="19" r="1.5"/></svg></span><h3>Terrassement</h3><small>Fouilles, fondations, évacuation des terres et gravats.</small></div></a>
+      <a class="tile" href="travaux/maconnerie-dalle-beton.html"><img src="images/site/tile-dalle-beton.webp" alt="Coulage d’une dalle en béton armé par Ciobanu Rénov" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="16"/><path d="M3 9h18M3 14h18M9 4v5M15 9v5M9 14v6"/></svg></span><h3>Maçonnerie &amp; béton</h3><small>Dalles en béton armé, murs, reprises de maçonnerie.</small></div></a>
+      <a class="tile" href="travaux/toiture-charpente.html"><img src="images/site/toiture.webp" alt="Toiture" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M3 11l9-7 9 7"/><path d="M5 10v10h14V10"/><path d="M9 20v-6h6v6"/></svg></span><h3>Charpente &amp; toiture</h3><small>Chevrons, liteaux, dépose et repose de tuiles.</small></div></a>
+      <a class="tile" href="travaux/isolation-facade.html"><img src="images/site/facade.webp" alt="Isolation et façade" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="1"/><path d="M3 9h18M3 15h18M9 3v18M15 3v18"/></svg></span><h3>Isolation &amp; façade</h3><small>Isolation des combles, murs et façade.</small></div></a>
+      <a class="tile" href="travaux/pavage-terrasse.html"><img src="images/site/tile-pavage.webp" alt="Allée pavée réalisée par Ciobanu Rénov" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M3 8h8v5H3zM13 8h8v5h-8zM3 15h5v5H3zM10 15h11v5H10zM3 3h12v3H3zM17 3h4v3h-4z"/></svg></span><h3>Pavage &amp; terrasses</h3><small>Allées pavées, terrasses en bois, aménagements extérieurs.</small></div></a>
+      <a class="tile" href="travaux/salle-de-bain.html"><img src="images/site/tile-salle-de-bain.webp" alt="Salle de bain rénovée par Ciobanu Rénov" loading="lazy"><div class="tc"><span class="tic"><svg class="ic" viewBox="0 0 24 24"><path d="M14 4l6 6-9 9H5v-6z"/><path d="M12 6l6 6"/></svg></span><h3>Salles de bain &amp; intérieur</h3><small>Salles de bain, carrelage, parquet, peinture et placards.</small></div></a>
     </div>
   </div>
 </section>
@@ -428,7 +428,7 @@ footer a:hover{color:var(--y)}
 <section class="duo" id="methode">
   <div class="wrap">
     <div class="dcard proc">
-      <img src="images/realisations/fondations-thumb.jpg" alt="" loading="lazy">
+      <img src="images/realisations/fondations-thumb.webp" alt="" loading="lazy">
       <div class="in">
         <h2>Comment se déroule votre projet</h2>
         <div class="steps">
@@ -460,19 +460,19 @@ footer a:hover{color:var(--y)}
       <a href="#contact" class="btn btn-d">Parler de votre projet <svg viewBox="0 0 24 24"><path d="M5 12h14M13 6l6 6-6 6"/></svg></a>
     </div>
     <div class="gal" id="gal">
-      <a class="ph tall" href="images/realisations/pavage.jpg" data-cap="Pavage"><img src="images/realisations/pavage-thumb.jpg" alt="Allée en pavés – Ciobanu Rénov" loading="lazy"><span>Pavage</span></a>
-      <a class="ph wide" href="images/realisations/dalle-beton.jpg" data-cap="Dalle béton armé"><img src="images/realisations/dalle-beton-thumb.jpg" alt="Coulage d’une dalle en béton armé – Ciobanu Rénov" loading="lazy"><span>Dalle béton armé</span></a>
-      <a class="ph tall" href="images/realisations/fondations.jpg" data-cap="Fondations"><img src="images/realisations/fondations-thumb.jpg" alt="Chantier de fondations avec pompe à béton – Ciobanu Rénov" loading="lazy"><span>Fondations</span></a>
-      <a class="ph" href="images/realisations/terrasse-bois.jpg" data-cap="Terrasse bois"><img src="images/realisations/terrasse-bois-thumb.jpg" alt="Terrasse en bois exotique avec bordure – Ciobanu Rénov" loading="lazy"><span>Terrasse bois</span></a>
-      <a class="ph" href="images/realisations/renovation-interieure.jpg" data-cap="Sol & placards"><img src="images/realisations/renovation-interieure-thumb.jpg" alt="Appartement rénové : sol stratifié et placards – Ciobanu Rénov" loading="lazy"><span>Sol &amp; placards</span></a>
-      <a class="ph tall" href="images/realisations/salle-de-bain-bleue.jpg" data-cap="Salle de bain"><img src="images/realisations/salle-de-bain-bleue-thumb.jpg" alt="Salle de bain rénovée : faïence bleue, robinetterie dorée et double vasque – Ciobanu Rénov" loading="lazy"><span>Salle de bain</span></a>
-      <a class="ph wide" href="images/realisations/parquet-point-de-hongrie.jpg" data-cap="Parquet point de Hongrie"><img src="images/realisations/parquet-point-de-hongrie-thumb.jpg" alt="Pose de parquet en point de Hongrie dans un séjour – Ciobanu Rénov" loading="lazy"><span>Parquet point de Hongrie</span></a>
-      <a class="ph tall" href="images/realisations/douche-travertin.jpg" data-cap="Douche travertin"><img src="images/realisations/douche-travertin-thumb.jpg" alt="Douche à l’italienne en travertin et paroi vitrée – Ciobanu Rénov" loading="lazy"><span>Douche travertin</span></a>
-      <a class="ph" href="images/realisations/salle-de-bain-beige.jpg" data-cap="Salle d’eau"><img src="images/realisations/salle-de-bain-beige-thumb.jpg" alt="Salle d’eau rénovée avec douche et meuble vasque – Ciobanu Rénov" loading="lazy"><span>Salle d’eau</span></a>
-      <a class="ph" href="images/realisations/renovation-peinture-sol.jpg" data-cap="Peinture & sols"><img src="images/realisations/renovation-peinture-sol-thumb.jpg" alt="Rénovation intérieure : peinture et sol stratifié – Ciobanu Rénov" loading="lazy"><span>Peinture &amp; sols</span></a>
-      <a class="ph tall" href="images/realisations/salle-de-bain-verte.jpg" data-cap="Salle de bain verte"><img src="images/realisations/salle-de-bain-verte-thumb.jpg" alt="Salle de bain avec faïence verte, douche à l’italienne et grand miroir rond – Ciobanu Rénov" loading="lazy"><span>Salle de bain verte</span></a>
-      <a class="ph big" href="images/realisations/cuisine-parquet.jpg" data-cap="Cuisine & parquet"><img src="images/realisations/cuisine-parquet-thumb.jpg" alt="Cuisine ouverte rénovée avec parquet point de Hongrie – Ciobanu Rénov" loading="lazy"><span>Cuisine &amp; parquet</span></a>
-      <a class="ph tall" href="images/realisations/placards-sur-mesure.jpg" data-cap="Placards sur mesure"><img src="images/realisations/placards-sur-mesure-thumb.jpg" alt="Placards sur mesure et parquet chêne dans une chambre – Ciobanu Rénov" loading="lazy"><span>Placards sur mesure</span></a>
+      <a class="ph tall" href="images/realisations/pavage.webp" data-cap="Pavage"><img src="images/realisations/pavage-thumb.webp" alt="Allée en pavés – Ciobanu Rénov" loading="lazy"><span>Pavage</span></a>
+      <a class="ph wide" href="images/realisations/dalle-beton.webp" data-cap="Dalle béton armé"><img src="images/realisations/dalle-beton-thumb.webp" alt="Coulage d’une dalle en béton armé – Ciobanu Rénov" loading="lazy"><span>Dalle béton armé</span></a>
+      <a class="ph tall" href="images/realisations/fondations.webp" data-cap="Fondations"><img src="images/realisations/fondations-thumb.webp" alt="Chantier de fondations avec pompe à béton – Ciobanu Rénov" loading="lazy"><span>Fondations</span></a>
+      <a class="ph" href="images/realisations/terrasse-bois.webp" data-cap="Terrasse bois"><img src="images/realisations/terrasse-bois-thumb.webp" alt="Terrasse en bois exotique avec bordure – Ciobanu Rénov" loading="lazy"><span>Terrasse bois</span></a>
+      <a class="ph" href="images/realisations/renovation-interieure.webp" data-cap="Sol & placards"><img src="images/realisations/renovation-interieure-thumb.webp" alt="Appartement rénové : sol stratifié et placards – Ciobanu Rénov" loading="lazy"><span>Sol &amp; placards</span></a>
+      <a class="ph tall" href="images/realisations/salle-de-bain-bleue.webp" data-cap="Salle de bain"><img src="images/realisations/salle-de-bain-bleue-thumb.webp" alt="Salle de bain rénovée : faïence bleue, robinetterie dorée et double vasque – Ciobanu Rénov" loading="lazy"><span>Salle de bain</span></a>
+      <a class="ph wide" href="images/realisations/parquet-point-de-hongrie.webp" data-cap="Parquet point de Hongrie"><img src="images/realisations/parquet-point-de-hongrie-thumb.webp" alt="Pose de parquet en point de Hongrie dans un séjour – Ciobanu Rénov" loading="lazy"><span>Parquet point de Hongrie</span></a>
+      <a class="ph tall" href="images/realisations/douche-travertin.webp" data-cap="Douche travertin"><img src="images/realisations/douche-travertin-thumb.webp" alt="Douche à l’italienne en travertin et paroi vitrée – Ciobanu Rénov" loading="lazy"><span>Douche travertin</span></a>
+      <a class="ph" href="images/realisations/salle-de-bain-beige.webp" data-cap="Salle d’eau"><img src="images/realisations/salle-de-bain-beige-thumb.webp" alt="Salle d’eau rénovée avec douche et meuble vasque – Ciobanu Rénov" loading="lazy"><span>Salle d’eau</span></a>
+      <a class="ph" href="images/realisations/renovation-peinture-sol.webp" data-cap="Peinture & sols"><img src="images/realisations/renovation-peinture-sol-thumb.webp" alt="Rénovation intérieure : peinture et sol stratifié – Ciobanu Rénov" loading="lazy"><span>Peinture &amp; sols</span></a>
+      <a class="ph tall" href="images/realisations/salle-de-bain-verte.webp" data-cap="Salle de bain verte"><img src="images/realisations/salle-de-bain-verte-thumb.webp" alt="Salle de bain avec faïence verte, douche à l’italienne et grand miroir rond – Ciobanu Rénov" loading="lazy"><span>Salle de bain verte</span></a>
+      <a class="ph big" href="images/realisations/cuisine-parquet.webp" data-cap="Cuisine & parquet"><img src="images/realisations/cuisine-parquet-thumb.webp" alt="Cuisine ouverte rénovée avec parquet point de Hongrie – Ciobanu Rénov" loading="lazy"><span>Cuisine &amp; parquet</span></a>
+      <a class="ph tall" href="images/realisations/placards-sur-mesure.webp" data-cap="Placards sur mesure"><img src="images/realisations/placards-sur-mesure-thumb.webp" alt="Placards sur mesure et parquet chêne dans une chambre – Ciobanu Rénov" loading="lazy"><span>Placards sur mesure</span></a>
     </div>
   </div>
 </section>
@@ -538,26 +538,26 @@ footer a:hover{color:var(--y)}
       <label class="chk"><input type="checkbox" name="Consentement RGPD" value="oui" required><span>J’accepte que mes données soient utilisées pour traiter ma demande, conformément à la <a href="mentions-legales.html#confidentialite">politique de confidentialité</a>.</span></label>
       <div class="fmsg" role="status" aria-live="polite" hidden></div>
     </form>
-    <div class="pic"><img src="images/realisations/dalle-beton-thumb.jpg" alt="" loading="lazy" style="object-position:55% 50%"></div>
+    <div class="pic"><img src="images/realisations/dalle-beton-thumb.webp" alt="" loading="lazy" style="object-position:55% 50%"></div>
   </div>
 </section>
 
 <footer>
   <div class="wrap foot">
     <div>
-      <div class="fbrand"><img src="images/site/logo-icon.png" alt=""><b>Ciobanu Rénov</b></div>
+      <div class="fbrand"><img src="images/site/logo-icon.webp" alt=""><b>Ciobanu Rénov</b></div>
       <p>Votre artisan pour la construction, la rénovation et l’isolation à Mézières-sur-Seine et dans les Yvelines.</p>
     </div>
     <div>
-      <h4>Accès rapide</h4>
+      <h3>Accès rapide</h3>
       <ul><li><a href="#top">Accueil</a></li><li><a href="#services">Services</a></li><li><a href="#methode">Méthode</a></li><li><a href="#realisations">Réalisations</a></li><li><a href="#zone">Zone d’intervention</a></li><li><a href="#faq">FAQ</a></li><li><a href="#contact">Contact</a></li></ul>
     </div>
     <div>
-      <h4>Nos services</h4>
-      <ul><li>Terrassement</li><li>Maçonnerie &amp; béton</li><li>Charpente &amp; toiture</li><li>Isolation &amp; façade</li><li>Pavage &amp; terrasses</li><li>Salles de bain</li><li>Parquet &amp; rénovation intérieure</li></ul>
+      <h3>Nos services</h3>
+      <ul><li><a href="travaux/terrassement-fondations.html">Terrassement</a></li><li><a href="travaux/maconnerie-dalle-beton.html">Maçonnerie &amp; béton</a></li><li><a href="travaux/toiture-charpente.html">Charpente &amp; toiture</a></li><li><a href="travaux/isolation-facade.html">Isolation &amp; façade</a></li><li><a href="travaux/pavage-terrasse.html">Pavage &amp; terrasses</a></li><li><a href="travaux/salle-de-bain.html">Salles de bain</a></li><li><a href="travaux/renovation-interieure.html">Parquet &amp; rénovation intérieure</a></li></ul>
     </div>
     <div>
-      <h4>Contact</h4>
+      <h3>Contact</h3>
       <ul class="fc">
         <li><svg class="ic" viewBox="0 0 24 24"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3.1 19.5 19.5 0 0 1-6-6A19.8 19.8 0 0 1 2.1 4.2 2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1.9.4 1.8.7 2.7a2 2 0 0 1-.5 2.1L8 9.8a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.7.7a2 2 0 0 1 1.7 2z"/></svg><a href="tel:+33647991777">06 47 99 17 77</a></li>
         <li><svg class="ic" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="M22 6l-10 7L2 6"/></svg><a href="mailto:ncbatipro@yahoo.com">ncbatipro@yahoo.com</a></li>
@@ -595,7 +595,7 @@ footer a:hover{color:var(--y)}
   var cuts=st.map(function(b){return +b.dataset.p});
   var reduce=matchMedia('(prefers-reduced-motion: reduce)').matches;
   var imgs=new Array(N), cur=-1, want=0, ticking=false;
-  function src(i){return FRAMES+'frame_'+String(i+1).padStart(3,'0')+'.jpg'}
+  function src(i){return FRAMES+'frame_'+String(i+1).padStart(3,'0')+'.webp'}
   function load(i){if(imgs[i])return;var im=new Image();im.decoding='async';im.onload=function(){if(Math.abs(i-want)<3||cur<0)draw(true)};im.src=src(i);imgs[i]=im}
   function size(){var r=Math.min(window.devicePixelRatio||1,2);cv.width=cv.clientWidth*r;cv.height=cv.clientHeight*r;cx.imageSmoothingQuality='high';draw(true)}
   function nearest(i){for(var d=0;d<N;d++){var a=imgs[i-d],b=imgs[i+d];if(a&&a.complete&&a.naturalWidth)return a;if(b&&b.complete&&b.naturalWidth)return b}}
